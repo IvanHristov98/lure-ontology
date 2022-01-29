@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY lure "http://www.lure-ontology.org/lure#">
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#">
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+]>
+
+<rdf:RDF xmlns="&lure;" xml:base="&lure;" xmlns:owl="&owl;" xmlns:rdf="&rdf;" xmlns:rdfs="&rdfs;" xmlns:xsd="&xsd;">
+    <owl:Ontology rdf:about="">
+        <rdfs:comment>An ontology about lure fishing schools</rdfs:comment>
+        <rdfs:label>Lure ontology</rdfs:label>
+    </owl:Ontology>
+
+</rdf:RDF>
