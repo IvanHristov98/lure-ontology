@@ -8,12 +8,13 @@
 ]>
 
 <rdf:RDF xmlns="&mat;" xml:base="&mat;" xmlns:owl="&owl;" xmlns:rdf="&rdf;" xmlns:rdfs="&rdfs;" xmlns:xsd="&xsd;">
-    <!-- Class hierarchy -->
+    <!-- Metadata -->
     <owl:Ontology rdf:about="">
         <rdfs:comment>An ontology about materials</rdfs:comment>
         <rdfs:label>Material ontology</rdfs:label>
     </owl:Ontology>
 
+    <!-- Class hierarchy -->
     <owl:Class rdf:ID="Material" />
 
     <owl:Class rdf:ID="SyntheticMaterial">
