@@ -28,6 +28,12 @@
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#isExtensible" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
 
     <owl:Class rdf:ID="Hardness" />
@@ -38,6 +44,11 @@
     </owl:ObjectProperty>
 
     <owl:DatatypeProperty rdf:ID="isRigid">
+        <rdfs:domain rdf:resource="#Material" />
+        <rdfs:range rdf:resource="&xsd;boolean" />
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:ID="isExtensible">
         <rdfs:domain rdf:resource="#Material" />
         <rdfs:range rdf:resource="&xsd;boolean" />
     </owl:DatatypeProperty>
@@ -55,18 +66,62 @@
     <owl:Class rdf:ID="Plant">
         <rdfs:subClassOf rdf:resource="#NaturalMaterial" />
     </owl:Class>
+    <owl:Class rdf:ID="Animal">
+        <rdfs:subClassOf rdf:resource="#NaturalMaterial" />
+    </owl:Class>
+
     <owl:Class rdf:ID="Wood">
         <rdfs:subClassOf rdf:resource="#Plant" />
     </owl:Class>
 
+    <owl:Class rdf:ID="Feather">
+        <rdfs:subClassOf rdf:resource="#Animal" />
+    </owl:Class>
+
+    <owl:Class rdf:ID="Hair">
+        <rdfs:subClassOf rdf:resource="#Animal" />
+    </owl:Class>
+
+    <owl:Class rdf:ID="Braid">
+        <rdfs:subClassOf rdf:resource="#Material" />
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasBraidMaterial" />
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:ObjectProperty rdf:ID="hasBraidMaterial">
+        <rdfs:domain rdf:resource="#Braid" />
+        <rdfs:domain rdf:resource="#Material" />
+    </owl:ObjectProperty>
+
+    <owl:Class rdf:ID="Fusion">
+        <rdfs:subClassOf rdf:resource="#Material" />
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasFusionMaterial" />
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:ObjectProperty rdf:ID="hasFusionMaterial">
+        <rdfs:domain rdf:resource="#Fusion" />
+        <rdfs:domain rdf:resource="#Material" />
+    </owl:ObjectProperty>
+
     <!-- Population -->
     <!-- Population of hardness -->
     <Hardness rdf:ID="Hard" />
+    <Hardness rdf:ID="Medium" />
     <Hardness rdf:ID="Soft" />
 
     <owl:AllDifferent>
         <owl:distinctMembers rdf:parseType="Collection">
             <Hardness rdf:about="#Hard" />
+            <Hardness rdf:about="#Medium" />
             <Hardness rdf:about="#Soft" />
         </owl:distinctMembers>
     </owl:AllDifferent>
@@ -75,49 +130,147 @@
     <SyntheticMaterial rdf:ID="SyntheticGraphite">
         <hasHardness rdf:resource="#Hard" />
         <isRigid rdf:datatype="&xsd;boolean">true</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
     </SyntheticMaterial>
 
     <SyntheticMaterial rdf:ID="Silicone">
         <hasHardness rdf:resource="#Soft" />
         <isRigid rdf:datatype="&xsd;boolean">true</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">true</isExtensible>
     </SyntheticMaterial>
+
+    <SyntheticMaterial rdf:ID="Carbon">
+        <hasHardness rdf:resource="#Medium" />
+        <isRigid rdf:datatype="&xsd;boolean">true</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
+    </SyntheticMaterial>
+
+    <SyntheticMaterial rdf:ID="Monofil">
+        <hasHardness rdf:resource="#Soft"></hasHardness>
+        <isRigid rdf:datatype="&xsd;boolean">true</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">true</isExtensible>
+    </SyntheticMaterial>
+
+    <SyntheticMaterial rdf:ID="FluoroCarbon">
+        <hasHardness rdf:resource="#Soft"></hasHardness>
+        <isRigid rdf:datatype="&xsd;boolean">true</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
+    </SyntheticMaterial>
+
+    <SyntheticMaterial rdf:ID="Fiber">
+        <hasHardness rdf:resource="#Soft"></hasHardness>
+        <isRigid rdf:datatype="&xsd;boolean">true</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
+    </SyntheticMaterial>
+
+    <Braid rdf:ID="FiberBraid">
+        <hasHardness rdf:resource="#Soft" />
+        <isRigid rdf:datatype="&xsd;boolean">true</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
+        <hasBraidMaterial rdf:resource="#Fiber" />
+    </Braid>
 
     <Metal rdf:ID="Iron">
         <hasHardness rdf:resource="#Hard" />
         <isRigid rdf:datatype="&xsd;boolean">false</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
+    </Metal>
+    <Metal rdf:ID="Copper">
+        <hasHardness rdf:resource="#Medium" />
+        <isRigid rdf:datatype="&xsd;boolean">false</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
     </Metal>
     <Metal rdf:ID="Aluminium">
         <hasHardness rdf:resource="#Hard" />
         <isRigid rdf:datatype="&xsd;boolean">false</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
     </Metal>
+
+    <Fusion rdf:ID="Steel">
+        <hasHardness rdf:resource="#Hard" />
+        <isRigid rdf:datatype="&xsd;boolean">false</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
+        <hasFusionMaterial rdf:resource="#Iron" />
+        <hasFusionMaterial rdf:resource="#Carbon" />
+    </Fusion>
 
     <Wood rdf:ID="Cork">
         <hasHardness rdf:resource="#Hard" />
         <isRigid rdf:datatype="&xsd;boolean">true</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
     </Wood>
     <Wood rdf:ID="Linden">
         <hasHardness rdf:resource="#Hard" />
         <isRigid rdf:datatype="&xsd;boolean">true</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
     </Wood>
     <Wood rdf:ID="Oak">
         <hasHardness rdf:resource="#Hard" />
         <isRigid rdf:datatype="&xsd;boolean">true</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
     </Wood>
     <Wood rdf:ID="Pine">
         <hasHardness rdf:resource="#Hard" />
         <isRigid rdf:datatype="&xsd;boolean">true</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
     </Wood>
+
+    <Feather rdf:ID="MallardFlankFeather">
+        <hasHardness rdf:resource="#Soft" />
+        <isRigid rdf:datatype="&xsd;boolean">false</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
+    </Feather>
+    <Feather rdf:ID="PheasantTailFeather">
+        <hasHardness rdf:resource="#Soft" />
+        <isRigid rdf:datatype="&xsd;boolean">false</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
+    </Feather>
+    <Feather rdf:ID="PeacockFeather">
+        <hasHardness rdf:resource="#Soft" />
+        <isRigid rdf:datatype="&xsd;boolean">false</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
+    </Feather>
+    <Feather rdf:ID="PartridgeFeather">
+        <hasHardness rdf:resource="#Soft" />
+        <isRigid rdf:datatype="&xsd;boolean">false</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
+    </Feather>
+
+    <Hair rdf:ID="RabbitHair">
+        <hasHardness rdf:resource="#Soft" />
+        <isRigid rdf:datatype="&xsd;boolean">false</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
+    </Hair>
+    <Hair rdf:ID="SquirrelHair">
+        <hasHardness rdf:resource="#Soft" />
+        <isRigid rdf:datatype="&xsd;boolean">false</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
+    </Hair>
+    <Hair rdf:ID="FoxHair">
+        <hasHardness rdf:resource="#Soft" />
+        <isRigid rdf:datatype="&xsd;boolean">false</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
+    </Hair>
+    <Hair rdf:ID="DeerHair">
+        <hasHardness rdf:resource="#Soft" />
+        <isRigid rdf:datatype="&xsd;boolean">false</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
+    </Hair>
 
     <owl:AllDifferent>
         <owl:distinctMembers rdf:parseType="Collection">
             <SyntheticMaterial rdf:about="#SyntheticGraphite" />
             <SyntheticMaterial rdf:about="#Silicone" />
+            <SyntheticMaterial rdf:about="#Carbon" />
+            <SyntheticMaterial rdf:about="#Monofil" />
+            <SyntheticMaterial rdf:about="#FluoroCarbon" />
         </owl:distinctMembers>
     </owl:AllDifferent>
 
     <owl:AllDifferent>
         <owl:distinctMembers rdf:parseType="Collection">
             <Metal rdf:about="#Iron" />
+            <Metal rdf:about="#Copper" />
             <Metal rdf:about="#Aluminium" />
         </owl:distinctMembers>
     </owl:AllDifferent>
@@ -128,6 +281,24 @@
             <Wood rdf:about="#Linden" />
             <Wood rdf:about="#Oak" />
             <Wood rdf:about="#Pine" />
+        </owl:distinctMembers>
+    </owl:AllDifferent>
+
+    <owl:AllDifferent>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <Feather rdf:about="#MallardFlankFeather" />
+            <Feather rdf:about="#PheasantTailFeather" />
+            <Feather rdf:about="#PeacockFeather" />
+            <Feather rdf:about="#PartridgeFeather" />
+        </owl:distinctMembers>
+    </owl:AllDifferent>
+
+    <owl:AllDifferent>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <Hair rdf:about="#RabbitHair" />
+            <Hair rdf:about="#SquirrelHair" />
+            <Hair rdf:about="#FoxHair" />
+            <Hair rdf:about="#DeerHair" />
         </owl:distinctMembers>
     </owl:AllDifferent>
 </rdf:RDF>
