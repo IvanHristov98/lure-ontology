@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY combo "http://localhost/rod_reel.rdf#">
+    <!ENTITY mat "http://localhost/material.rdf#">
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#">
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+]>
+
+<rdf:RDF xmlns="&combo;" xml:base="&combo;" xmlns:mat="&mat;" xmlns:owl="&owl;" xmlns:rdf="&rdf;" xmlns:rdfs="&rdfs;" xmlns:xsd="&xsd;">
+    <!-- Metadata -->
+    <owl:Ontology rdf:about="">
+        <rdfs:comment>An ontology about reels and rods</rdfs:comment>
+        <rdfs:label>A rod and reel ontology</rdfs:label>
+        <owl:imports rdf:resource="http://localhost/material.rdf" />
+    </owl:Ontology>
+
+    <!-- Combo class hierarchy -->
+    <owl:Class rdf:ID="Combo">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasReel" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasRod" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:ObjectProperty rdf:ID="hasReel">
+        <rdfs:domain rdf:resource="#Combo" />
+        <rdfs:range rdf:resource="#Reel" />
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:ID="hasRod">
+        <rdfs:domain rdf:resource="#Combo" />
+        <rdfs:range rdf:resource="#Rod" />
+    </owl:ObjectProperty>
+
+    <!-- Reel class hierarchy -->
+    <owl:Class rdf:ID="Reel">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasBearingCount" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasDrag" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasGearRatio" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasAntiReverseHandle" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasSpool" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:DatatypeProperty rdf:ID="hasBearingCount">
+        <rdfs:domain rdf:resource="#Reel" />
+        <rdfs:range rdf:resource="&xsd;positiveInteger" />
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:ID="hasDrag">
+        <rdfs:domain rdf:resource="#Reel" />
+        <rdfs:range rdf:resource="&xsd;boolean" />
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:ID="hasGearRatio">
+        <rdfs:domain rdf:resource="#Reel" />
+        <rdfs:range rdf:resource="&xsd;float" />
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:ID="hasAntiReverseHandle">
+        <rdfs:domain rdf:resource="#Reel" />
+        <rdfs:range rdf:resource="&xsd;boolean" />
+    </owl:DatatypeProperty>
+
+    <owl:Class rdf:ID="Spool">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasSpoolMaterial" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:ObjectProperty rdf:ID="hasSpool">
+        <rdfs:domain rdf:resource="#Reel" />
+        <rdfs:range rdf:resource="#Spool" />
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:ID="hasSpoolMaterial">
+        <rdfs:domain rdf:resource="#Spool" />
+        <rdfs:range rdf:resource="&mat;Material" />
+    </owl:ObjectProperty>
+
+    <owl:Class rdf:ID="SpinningReel">
+        <rdfs:subClassOf rdf:resource="#Reel" />
+    </owl:Class>
+
+    <owl:Class rdf:ID="BaitcastingReel">
+        <rdfs:subClassOf rdf:resource="#Reel" />
+    </owl:Class>
+
+    <owl:Class rdf:ID="SpincastingReel">
+        <rdfs:subClassOf rdf:resource="#Reel" />
+    </owl:Class>
+
+    <owl:Class rdf:ID="FlyReel">
+        <rdfs:subClassOf rdf:resource="#Reel" />
+    </owl:Class>
+
+    <!-- Rod class hierarchy -->
+    <owl:Class rdf:ID="Rod">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasLength" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasWeight" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasAction" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasRodMaterial" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:DatatypeProperty rdf:ID="hasLength">
+        <rdfs:domain rdf:resource="#Rod" />
+        <rdfs:range rdf:resource="&xsd;decimal" />
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:ID="hasWeight">
+        <rdfs:domain rdf:resource="#Rod" />
+        <rdfs:range rdf:resource="&xsd;decimal" />
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:ID="hasAction">
+        <rdfs:domain rdf:resource="#Rod" />
+        <rdfs:range rdf:resource="&xsd;decimal" />
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:ID="hasRodMaterial">
+        <rdfs:domain rdf:resource="#Rod" />
+        <rdfs:range rdf:resource="&mat;Material" />
+    </owl:ObjectProperty>
+
+</rdf:RDF>
