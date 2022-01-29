@@ -1,13 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE rdf:RDF [
-    <!ENTITY lure "http://www.lure-ontology.org/lure#">
+    <!ENTITY lure "http://localhost/lure.rdf#">
+    <!ENTITY mat "http://localhost/material.rdf#">
     <!ENTITY owl "http://www.w3.org/2002/07/owl#">
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
 ]>
 
-<rdf:RDF xmlns="&lure;" xml:base="&lure;" xmlns:owl="&owl;" xmlns:rdf="&rdf;" xmlns:rdfs="&rdfs;" xmlns:xsd="&xsd;">
+<rdf:RDF xmlns="&lure;" xml:base="&lure;" xmlns:mat="&mat;" xmlns:owl="&owl;" xmlns:rdf="&rdf;" xmlns:rdfs="&rdfs;" xmlns:xsd="&xsd;">
     <!-- Class hierarchy -->
     <owl:Ontology rdf:about="">
         <rdfs:comment>An ontology about lure fishing schools</rdfs:comment>
@@ -43,5 +44,92 @@
         <rdfs:range rdf:resource="#RetrieveStyle" />
     </owl:ObjectProperty>
 
+    <owl:Class rdf:ID="Reel">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasBearingCount" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasDrag" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasGearRatio" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasAntiReverseHandle" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasSpool" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:DatatypeProperty rdf:ID="hasBearingCount">
+        <rdfs:domain rdf:resource="#Reel" />
+        <rdfs:range rdf:resource="&xsd;positiveInteger" />
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:ID="hasDrag">
+        <rdfs:domain rdf:resource="#Reel" />
+        <rdfs:range rdf:resource="&xsd;boolean" />
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:ID="hasGearRatio">
+        <rdfs:domain rdf:resource="#Reel" />
+        <rdfs:range rdf:resource="&xsd;float"></rdfs:range>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:ID="hasAntiReverseHandle">
+        <rdfs:domain rdf:resource="#Reel" />
+        <rdfs:range rdf:resource="&xsd;boolean"></rdfs:range>
+    </owl:DatatypeProperty>
+
+    <owl:Class rdf:ID="Spool">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ofMaterial" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:ObjectProperty rdf:ID="hasSpool">
+        <rdfs:domain rdf:resource="#Reel" />
+        <rdfs:range rdf:resource="#Spool" />
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:ID="ofMaterial">
+        <rdfs:domain rdf:resource="#Spool" />
+        <rdfs:range rdf:resource="&mat;Material" />
+    </owl:DatatypeProperty>
+
+    <owl:Class rdf:ID="SpinningReel">
+        <rdfs:subClassOf rdf:resource="#Reel" />
+    </owl:Class>
+
+    <owl:Class rdf:ID="BaitcastingReel">
+        <rdfs:subClassOf rdf:resource="#Reel" />
+    </owl:Class>
+
+    <owl:Class rdf:ID="SpincastingReel">
+        <rdfs:subClassOf rdf:resource="#Reel" />
+    </owl:Class>
+
+    <owl:Class rdf:ID="FlyReel">
+        <rdfs:subClassOf rdf:resource="#Reel" />
+    </owl:Class>
 
 </rdf:RDF>

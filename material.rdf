@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY mat "http://localhost/material.rdf#">
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#">
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+]>
+
+<rdf:RDF xmlns="&mat;" xml:base="&mat;" xmlns:owl="&owl;" xmlns:rdf="&rdf;" xmlns:rdfs="&rdfs;" xmlns:xsd="&xsd;">
+    <!-- Class hierarchy -->
+    <owl:Ontology rdf:about="">
+        <rdfs:comment>An ontology about materials</rdfs:comment>
+        <rdfs:label>Material ontology</rdfs:label>
+    </owl:Ontology>
+
+    <owl:Class rdf:ID="Material" />
+
+    <owl:Class rdf:ID="SyntheticMaterial">
+        <rdfs:subClassOf rdf:resource="#Material" />
+    </owl:Class>
+    <owl:Class rdf:ID="NaturalMaterial">
+        <rdfs:subClassOf rdf:resource="#Material" />
+    </owl:Class>
+
+    <owl:Class rdf:ID="Metal">
+        <rdfs:subClassOf rdf:resource="#NaturalMaterial" />
+    </owl:Class>
+    <owl:Class rdf:ID="Plant">
+        <rdfs:subClassOf rdf:resource="#NaturalMaterial" />
+    </owl:Class>
+    <owl:Class rdf:ID="Wood">
+        <rdfs:subClassOf rdf:resource="#Plant" />
+    </owl:Class>
+
+    <SyntheticMaterial rdf:ID="SyntheticGraphite" />
+
+    <Metal rdf:ID="Iron" />
+    <Metal rdf:ID="Aluminium" />
+
+    <Wood rdf:ID="Cork" />
+    <Wood rdf:ID="Linden" />
+    <Wood rdf:ID="Oak" />
+    <Wood rdf:ID="Pine" />
+
+    <owl:AllDifferent>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <SyntheticMaterial rdf:about="#SyntheticGraphite" />
+        </owl:distinctMembers>
+    </owl:AllDifferent>
+
+    <owl:AllDifferent>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <Metal rdf:about="#Iron" />
+            <Metal rdf:about="#Aluminium" />
+        </owl:distinctMembers>
+    </owl:AllDifferent>
+
+    <owl:AllDifferent>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <Wood rdf:about="#Cork" />
+            <Wood rdf:about="#Linden" />
+            <Wood rdf:about="#Oak" />
+            <Wood rdf:about="#Pine" />
+        </owl:distinctMembers>
+    </owl:AllDifferent>
+</rdf:RDF>
