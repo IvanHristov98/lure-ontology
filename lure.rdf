@@ -8,9 +8,40 @@
 ]>
 
 <rdf:RDF xmlns="&lure;" xml:base="&lure;" xmlns:owl="&owl;" xmlns:rdf="&rdf;" xmlns:rdfs="&rdfs;" xmlns:xsd="&xsd;">
+    <!-- Class hierarchy -->
     <owl:Ontology rdf:about="">
         <rdfs:comment>An ontology about lure fishing schools</rdfs:comment>
         <rdfs:label>Lure ontology</rdfs:label>
     </owl:Ontology>
+
+    <owl:Class rdf:ID="School">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasCastingStyle" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasRetrieveStyle" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:ID="CastingStyle"></owl:Class>
+
+    <owl:ObjectProperty rdf:ID="hasCastingStyle">
+        <rdfs:domain rdf:resource="#School" />
+        <rdfs:range rdf:resource="#CastingStyle" />
+    </owl:ObjectProperty>
+
+    <owl:Class rdf:ID="RetrieveStyle"></owl:Class>
+
+    <owl:ObjectProperty rdf:ID="hasRetrieveStyle">
+        <rdfs:domain rdf:resource="#School" />
+        <rdfs:range rdf:resource="#RetrieveStyle" />
+    </owl:ObjectProperty>
+
 
 </rdf:RDF>
