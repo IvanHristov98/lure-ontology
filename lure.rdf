@@ -13,6 +13,7 @@
     <owl:Ontology rdf:about="">
         <rdfs:comment>An ontology about lure fishing schools</rdfs:comment>
         <rdfs:label>Lure ontology</rdfs:label>
+        <owl:imports rdf:resource="http://localhost/material.rdf"/>
     </owl:Ontology>
 
     <owl:Class rdf:ID="School">
