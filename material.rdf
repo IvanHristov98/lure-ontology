@@ -15,7 +15,32 @@
     </owl:Ontology>
 
     <!-- Class hierarchy -->
-    <owl:Class rdf:ID="Material" />
+    <owl:Class rdf:ID="Material">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasHardness" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#isRigid" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:ID="Hardness" />
+
+    <owl:ObjectProperty rdf:ID="hasHardness">
+        <rdfs:domain rdf:resource="#Material" />
+        <rdfs:range rdf:resource="#Hardness" />
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:ID="isRigid">
+        <rdfs:domain rdf:resource="#Material" />
+        <rdfs:range rdf:resource="&xsd;boolean" />
+    </owl:DatatypeProperty>
 
     <owl:Class rdf:ID="SyntheticMaterial">
         <rdfs:subClassOf rdf:resource="#Material" />
@@ -34,19 +59,59 @@
         <rdfs:subClassOf rdf:resource="#Plant" />
     </owl:Class>
 
-    <SyntheticMaterial rdf:ID="SyntheticGraphite" />
+    <!-- Population -->
+    <!-- Population of hardness -->
+    <Hardness rdf:ID="Hard" />
+    <Hardness rdf:ID="Soft" />
 
-    <Metal rdf:ID="Iron" />
-    <Metal rdf:ID="Aluminium" />
+    <owl:AllDifferent>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <Hardness rdf:about="#Hard" />
+            <Hardness rdf:about="#Soft" />
+        </owl:distinctMembers>
+    </owl:AllDifferent>
 
-    <Wood rdf:ID="Cork" />
-    <Wood rdf:ID="Linden" />
-    <Wood rdf:ID="Oak" />
-    <Wood rdf:ID="Pine" />
+    <!-- Population of materials -->
+    <SyntheticMaterial rdf:ID="SyntheticGraphite">
+        <hasHardness rdf:resource="#Hard" />
+        <isRigid rdf:datatype="&xsd;boolean">true</isRigid>
+    </SyntheticMaterial>
+
+    <SyntheticMaterial rdf:ID="Silicone">
+        <hasHardness rdf:resource="#Soft" />
+        <isRigid rdf:datatype="&xsd;boolean">true</isRigid>
+    </SyntheticMaterial>
+
+    <Metal rdf:ID="Iron">
+        <hasHardness rdf:resource="#Hard" />
+        <isRigid rdf:datatype="&xsd;boolean">false</isRigid>
+    </Metal>
+    <Metal rdf:ID="Aluminium">
+        <hasHardness rdf:resource="#Hard" />
+        <isRigid rdf:datatype="&xsd;boolean">false</isRigid>
+    </Metal>
+
+    <Wood rdf:ID="Cork">
+        <hasHardness rdf:resource="#Hard" />
+        <isRigid rdf:datatype="&xsd;boolean">true</isRigid>
+    </Wood>
+    <Wood rdf:ID="Linden">
+        <hasHardness rdf:resource="#Hard" />
+        <isRigid rdf:datatype="&xsd;boolean">true</isRigid>
+    </Wood>
+    <Wood rdf:ID="Oak">
+        <hasHardness rdf:resource="#Hard" />
+        <isRigid rdf:datatype="&xsd;boolean">true</isRigid>
+    </Wood>
+    <Wood rdf:ID="Pine">
+        <hasHardness rdf:resource="#Hard" />
+        <isRigid rdf:datatype="&xsd;boolean">true</isRigid>
+    </Wood>
 
     <owl:AllDifferent>
         <owl:distinctMembers rdf:parseType="Collection">
             <SyntheticMaterial rdf:about="#SyntheticGraphite" />
+            <SyntheticMaterial rdf:about="#Silicone" />
         </owl:distinctMembers>
     </owl:AllDifferent>
 
