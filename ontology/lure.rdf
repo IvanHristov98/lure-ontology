@@ -216,160 +216,303 @@
     <!-- Hook population -->
     <!-- Single barbed eyeless hooks -->
     <Hook rdf:ID="SingleBarbedEyelessHookNo2">
-        <hasAtomicHook rdf:resorce="#BarbedHookNo2" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo2" />
         <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarbedEyelessHookNo4">
-        <hasAtomicHook rdf:resorce="#BarbedHookNo4" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo4" />
         <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarbedEyelessHookNo6">
-        <hasAtomicHook rdf:resorce="#BarbedHookNo6" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo6" />
         <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarbedEyelessHookNo8">
-        <hasAtomicHook rdf:resorce="#BarbedHookNo8" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo8" />
         <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarbedEyelessHookNo10">
-        <hasAtomicHook rdf:resorce="#BarbedHookNo10" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo10" />
         <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarbedEyelessHookNo12">
-        <hasAtomicHook rdf:resorce="#BarbedHookNo12" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo12" />
         <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarbedEyelessHookNo14">
-        <hasAtomicHook rdf:resorce="#BarbedHookNo14" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo14" />
         <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
     </Hook>
 
     <!-- Single barbed eyed hooks -->
     <Hook rdf:ID="SingleBarbedEyedHookNo2">
-        <hasAtomicHook rdf:resorce="#BarbedHookNo2" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo2" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarbedEyedHookNo4">
-        <hasAtomicHook rdf:resorce="#BarbedHookNo4" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo4" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarbedEyedHookNo6">
-        <hasAtomicHook rdf:resorce="#BarbedHookNo6" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo6" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarbedEyedHookNo8">
-        <hasAtomicHook rdf:resorce="#BarbedHookNo8" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo8" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarbedEyedHookNo10">
-        <hasAtomicHook rdf:resorce="#BarbedHookNo10" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo10" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarbedEyedHookNo12">
-        <hasAtomicHook rdf:resorce="#BarbedHookNo12" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo12" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarbedEyedHookNo14">
-        <hasAtomicHook rdf:resorce="#BarbedHookNo14" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo14" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
     </Hook>
 
     <!-- Single barbless eyeless hooks -->
     <Hook rdf:ID="SingleBarblessEyelessHookNo2">
-        <hasAtomicHook rdf:resorce="#BarblessHookNo2" />
+        <hasAtomicHook rdf:resource="#BarblessHookNo2" />
         <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarblessEyelessHookNo4">
-        <hasAtomicHook rdf:resorce="#BarblessHookNo4" />
+        <hasAtomicHook rdf:resource="#BarblessHookNo4" />
         <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarblessEyelessHookNo6">
-        <hasAtomicHook rdf:resorce="#BarblessHookNo6" />
+        <hasAtomicHook rdf:resource="#BarblessHookNo6" />
         <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarblessEyelessHookNo8">
-        <hasAtomicHook rdf:resorce="#BarblessHookNo8" />
+        <hasAtomicHook rdf:resource="#BarblessHookNo8" />
         <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarblessEyelessHookNo10">
-        <hasAtomicHook rdf:resorce="#BarblessHookNo10" />
+        <hasAtomicHook rdf:resource="#BarblessHookNo10" />
         <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarblessEyelessHookNo12">
-        <hasAtomicHook rdf:resorce="#BarblessHookNo12" />
+        <hasAtomicHook rdf:resource="#BarblessHookNo12" />
         <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarblessEyelessHookNo14">
-        <hasAtomicHook rdf:resorce="#BarblessHookNo14" />
+        <hasAtomicHook rdf:resource="#BarblessHookNo14" />
         <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
     </Hook>
 
     <!-- Single barbless eyed hooks -->
     <Hook rdf:ID="SingleBarblessEyedHookNo2">
-        <hasAtomicHook rdf:resorce="#BarblessHookNo2" />
+        <hasAtomicHook rdf:resource="#BarblessHookNo2" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarblessEyedHookNo4">
-        <hasAtomicHook rdf:resorce="#BarblessHookNo4" />
+        <hasAtomicHook rdf:resource="#BarblessHookNo4" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarblessEyedHookNo6">
-        <hasAtomicHook rdf:resorce="#BarblessHookNo6" />
+        <hasAtomicHook rdf:resource="#BarblessHookNo6" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarblessEyedHookNo8">
-        <hasAtomicHook rdf:resorce="#BarblessHookNo8" />
+        <hasAtomicHook rdf:resource="#BarblessHookNo8" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarblessEyedHookNo10">
-        <hasAtomicHook rdf:resorce="#BarblessHookNo10" />
+        <hasAtomicHook rdf:resource="#BarblessHookNo10" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarblessEyedHookNo12">
-        <hasAtomicHook rdf:resorce="#BarblessHookNo12" />
+        <hasAtomicHook rdf:resource="#BarblessHookNo12" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
     </Hook>
     <Hook rdf:ID="SingleBarblessEyedHookNo14">
-        <hasAtomicHook rdf:resorce="#BarblessHookNo14" />
+        <hasAtomicHook rdf:resource="#BarblessHookNo14" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
     </Hook>
 
     <!-- Triple barbed eyed hooks -->
     <Hook rdf:ID="TripleBarbedEyedHookNo4">
-        <hasAtomicHook rdf:resorce="#BarbedHookNo4" />
-        <hasAtomicHook rdf:resorce="#BarbedHookNo4" />
-        <hasAtomicHook rdf:resorce="#BarbedHookNo4" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo4" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo4" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo4" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
     </Hook>
     <Hook rdf:ID="TripleBarbedEyedHookNo6">
-        <hasAtomicHook rdf:resorce="#BarbedHookNo6" />
-        <hasAtomicHook rdf:resorce="#BarbedHookNo6" />
-        <hasAtomicHook rdf:resorce="#BarbedHookNo6" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo6" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo6" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo6" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
     </Hook>
     <Hook rdf:ID="TripleBarbedEyedHookNo8">
-        <hasAtomicHook rdf:resorce="#BarbedHookNo8" />
-        <hasAtomicHook rdf:resorce="#BarbedHookNo8" />
-        <hasAtomicHook rdf:resorce="#BarbedHookNo8" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo8" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo8" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo8" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
     </Hook>
     <Hook rdf:ID="TripleBarbedEyedHookNo10">
-        <hasAtomicHook rdf:resorce="#BarbedHookNo10" />
-        <hasAtomicHook rdf:resorce="#BarbedHookNo10" />
-        <hasAtomicHook rdf:resorce="#BarbedHookNo10" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo10" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo10" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo10" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
     </Hook>
     <Hook rdf:ID="TripleBarbedEyedHookNo12">
-        <hasAtomicHook rdf:resorce="#BarbedHookNo12" />
-        <hasAtomicHook rdf:resorce="#BarbedHookNo12" />
-        <hasAtomicHook rdf:resorce="#BarbedHookNo12" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo12" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo12" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo12" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
     </Hook>
     <Hook rdf:ID="TripleBarbedEyedHookNo14">
-        <hasAtomicHook rdf:resorce="#BarbedHookNo14" />
-        <hasAtomicHook rdf:resorce="#BarbedHookNo14" />
-        <hasAtomicHook rdf:resorce="#BarbedHookNo14" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo14" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo14" />
+        <hasAtomicHook rdf:resource="#BarbedHookNo14" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
     </Hook>
+
+    <!-- Jig head hooks -->
+    <Hook rdf:ID="BarbedEyedHookNo4Jig7g">
+        <hasAtomicHook rdf:resource="#BarbedHookNo4" />
+        <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
+        <hasJigHead rdf:resource="#JigHead7g" />
+    </Hook>
+    <Hook rdf:ID="TripleBarbedEyedHookNo6Jig5g">
+        <hasAtomicHook rdf:resource="#BarbedHookNo6" />
+        <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
+        <hasJigHead rdf:resource="#JigHead5g" />
+    </Hook>
+    <Hook rdf:ID="TripleBarbedEyedHookNo8Jig5g">
+        <hasAtomicHook rdf:resource="#BarbedHookNo8" />
+        <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
+        <hasJigHead rdf:resource="#JigHead5g" />
+    </Hook>
+
+    <!-- Lure population -->
+    <!-- Wobbler -->
+    <Lure rdf:ID="BoogeyWoogeyWobbler">
+        <hasLength rdf:datatype="&xsd;decimal">5.5</hasLength>
+        <hasWeight rdf:datatype="&xsd;decimal">5</hasWeight>
+        <hasHook rdf:resource="#TripleBarbedEyedHookNo10" />
+        <hasHook rdf:resource="#TripleBarbedEyedHookNo12" />
+        <hasBodyMaterial rdf:resource="&mat;Linden" />
+    </Lure>
+    <Lure rdf:ID="LaptaWobbler">
+        <hasLength rdf:datatype="&xsd;decimal">8.5</hasLength>
+        <hasWeight rdf:datatype="&xsd;decimal">14</hasWeight>
+        <hasHook rdf:resource="#TripleBarbedEyedHookNo8" />
+        <hasHook rdf:resource="#TripleBarbedEyedHookNo8" />
+        <hasBodyMaterial rdf:resource="&mat;Oak" />
+    </Lure>
+    <Lure rdf:ID="WomburTomburWobbler">
+        <hasLength rdf:datatype="&xsd;decimal">9.5</hasLength>
+        <hasWeight rdf:datatype="&xsd;decimal">15</hasWeight>
+        <hasHook rdf:resource="#TripleBarbedEyedHookNo8" />
+        <hasHook rdf:resource="#TripleBarbedEyedHookNo8" />
+        <hasBodyMaterial rdf:resource="&mat;Oak" />
+    </Lure>
+    <Lure rdf:ID="BeebopWobbler">
+        <hasLength rdf:datatype="&xsd;decimal">4.0</hasLength>
+        <hasWeight rdf:datatype="&xsd;decimal">8</hasWeight>
+        <hasHook rdf:resource="#TripleBarbedEyedHookNo12" />
+        <hasBodyMaterial rdf:resource="&mat;Pine" />
+    </Lure>
+    <Lure rdf:ID="BingoRingoWobbler">
+        <hasLength rdf:datatype="&xsd;decimal">12.0</hasLength>
+        <hasWeight rdf:datatype="&xsd;decimal">21</hasWeight>
+        <hasHook rdf:resource="#TripleBarbedEyedHookNo6" />
+        <hasHook rdf:resource="#TripleBarbedEyedHookNo6" />
+        <hasBodyMaterial rdf:resource="&mat;Pine" />
+    </Lure>
+    <Lure rdf:ID="KambiWobbler">
+        <hasLength rdf:datatype="&xsd;decimal">11.0</hasLength>
+        <hasWeight rdf:datatype="&xsd;decimal">18</hasWeight>
+        <hasHook rdf:resource="#TripleBarbedEyedHookNo6" />
+        <hasHook rdf:resource="#TripleBarbedEyedHookNo6" />
+        <hasBodyMaterial rdf:resource="&mat;Pine" />
+    </Lure>
+    <Lure rdf:ID="KambiWobbler">
+        <hasLength rdf:datatype="&xsd;decimal">11.0</hasLength>
+        <hasWeight rdf:datatype="&xsd;decimal">18</hasWeight>
+        <hasHook rdf:resource="#TripleBarbedEyedHookNo6" />
+        <hasHook rdf:resource="#TripleBarbedEyedHookNo6" />
+        <hasBodyMaterial rdf:resource="&mat;Pine" />
+    </Lure>
+    <Lure rdf:ID="SmashThePopper">
+        <hasLength rdf:datatype="&xsd;decimal">7.0</hasLength>
+        <hasWeight rdf:datatype="&xsd;decimal">5</hasWeight>
+        <hasHook rdf:resource="#SingleBarbedEyedHookNo6" />
+        <hasBodyMaterial rdf:resource="&mat;Linden" />
+    </Lure>
+    <Lure rdf:ID="TikkiPopper">
+        <hasLength rdf:datatype="&xsd;decimal">12.0</hasLength>
+        <hasWeight rdf:datatype="&xsd;decimal">9</hasWeight>
+        <hasHook rdf:resource="#SingleBarbedEyedHookNo6" />
+        <hasHook rdf:resource="#SingleBarbedEyedHookNo6" />
+        <hasBodyMaterial rdf:resource="&mat;Linden" />
+    </Lure>
+    <Lure rdf:ID="WamboSpinner">
+        <hasLength rdf:datatype="&xsd;decimal">5.0</hasLength>
+        <hasWeight rdf:datatype="&xsd;decimal">10</hasWeight>
+        <hasHook rdf:resource="#TripleBarbedEyedHookNo6" />
+        <hasBodyMaterial rdf:resource="&mat;Steel" />
+    </Lure>
+    <Lure rdf:ID="SymbioSpinner">
+        <hasLength rdf:datatype="&xsd;decimal">4.0</hasLength>
+        <hasWeight rdf:datatype="&xsd;decimal">8</hasWeight>
+        <hasHook rdf:resource="#TripleBarbedEyedHookNo8" />
+        <hasBodyMaterial rdf:resource="&mat;Steel" />
+    </Lure>
+    <Lure rdf:ID="BleakShad">
+        <hasLength rdf:datatype="&xsd;decimal">7.0</hasLength>
+        <hasWeight rdf:datatype="&xsd;decimal">15</hasWeight>
+        <hasHook rdf:resource="#BarbedEyedHookNo4Jig7g" />
+        <hasBodyMaterial rdf:resource="&mat;Silicone" />
+    </Lure>
+    <Lure rdf:ID="BumbleTwister">
+        <hasLength rdf:datatype="&xsd;decimal">7.0</hasLength>
+        <hasWeight rdf:datatype="&xsd;decimal">13</hasWeight>
+        <hasHook rdf:resource="#BarbedEyedHookNo4Jig7g" />
+        <hasBodyMaterial rdf:resource="&mat;Silicone" />
+    </Lure>
+    <Lure rdf:ID="RuddShad">
+        <hasLength rdf:datatype="&xsd;decimal">5.0</hasLength>
+        <hasWeight rdf:datatype="&xsd;decimal">10</hasWeight>
+        <hasHook rdf:resource="#BarbedEyedHookNo6Jig5g" />
+        <hasBodyMaterial rdf:resource="&mat;Silicone" />
+    </Lure>
+    <Lure rdf:ID="RobinShad">
+        <hasLength rdf:datatype="&xsd;decimal">6.0</hasLength>
+        <hasWeight rdf:datatype="&xsd;decimal">10</hasWeight>
+        <hasHook rdf:resource="#BarbedEyedHookNo6Jig5g" />
+        <hasBodyMaterial rdf:resource="&mat;Silicone" />
+    </Lure>
+    <Lure rdf:ID="PheasantTailNymph">
+        <hasLength rdf:datatype="&xsd;decimal">1.2</hasLength>
+        <hasWeight rdf:datatype="&xsd;decimal">2</hasWeight>
+        <hasHook rdf:resource="#SingleBarblessEyedHookNo12" />
+        <hasBodyMaterial rdf:resource="&mat;PheasantTailFeather" />
+        <hasBodyMaterial rdf:resource="&mat;PeacockFeather" />
+        <hasBodyMaterial rdf:resource="&mat;Copper" />
+        <hasBodyMaterial rdf:resource="&mat;Tungsten" />
+    </Lure>
+    <Lure rdf:ID="GoldRibbedHaresEarNymph">
+        <hasLength rdf:datatype="&xsd;decimal">1.0</hasLength>
+        <hasWeight rdf:datatype="&xsd;decimal">3</hasWeight>
+        <hasHook rdf:resource="#SingleBarblessEyedHookNo14" />
+        <hasBodyMaterial rdf:resource="&mat;Lead" />
+        <hasBodyMaterial rdf:resource="&mat;Copper" />
+        <hasBodyMaterial rdf:resource="&mat;PheasantTailFeather" />
+        <hasBodyMaterial rdf:resource="&mat;RabbitHair" />
+        <hasBodyMaterial rdf:resource="&mat;Tungsten" />
+    </Lure>
+    <Lure rdf:ID="IronLotusNymph">
+        <hasLength rdf:datatype="&xsd;decimal">1.0</hasLength>
+        <hasWeight rdf:datatype="&xsd;decimal">3</hasWeight>
+        <hasHook rdf:resource="#SingleBarblessEyedHookNo14" />
+        <hasBodyMaterial rdf:resource="&mat;Tungsten" />
+        <hasBodyMaterial rdf:resource="&mat;CoqDeLeonFeather" />
+    </Lure>
 
 </rdf:RDF>

@@ -185,6 +185,16 @@
         <isRigid rdf:datatype="&xsd;boolean">false</isRigid>
         <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
     </Metal>
+    <Metal rdf:ID="Lead">
+        <hasHardness rdf:resource="#Medium" />
+        <isRigid rdf:datatype="&xsd;boolean">false</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
+    </Metal>
+    <Metal rdf:ID="Tungsten">
+        <hasHardness rdf:resource="#Medium" />
+        <isRigid rdf:datatype="&xsd;boolean">false</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
+    </Metal>
 
     <Fusion rdf:ID="Steel">
         <hasHardness rdf:resource="#Hard" />
@@ -235,6 +245,11 @@
         <isRigid rdf:datatype="&xsd;boolean">false</isRigid>
         <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
     </Feather>
+    <Feather rdf:ID="CoqDeLeonFeather">
+        <hasHardness rdf:resource="#Soft" />
+        <isRigid rdf:datatype="&xsd;boolean">false</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
+    </Feather>
 
     <Hair rdf:ID="RabbitHair">
         <hasHardness rdf:resource="#Soft" />
@@ -272,6 +287,8 @@
             <Metal rdf:about="#Iron" />
             <Metal rdf:about="#Copper" />
             <Metal rdf:about="#Aluminium" />
+            <Metal rdf:about="#Lead" />
+            <Metal rdf:about="#Tungsten" />
         </owl:distinctMembers>
     </owl:AllDifferent>
 
@@ -290,6 +307,7 @@
             <Feather rdf:about="#PheasantTailFeather" />
             <Feather rdf:about="#PeacockFeather" />
             <Feather rdf:about="#PartridgeFeather" />
+            <Feather rdf:about="#CoqDeLeonFeather" />
         </owl:distinctMembers>
     </owl:AllDifferent>
 
