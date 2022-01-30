@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE rdf:RDF [
-    <!ENTITY combo "http://localhost/rod_reel.rdf#">
+    <!ENTITY combo "http://localhost/combo.rdf#">
     <!ENTITY mat "http://localhost/material.rdf#">
     <!ENTITY owl "http://www.w3.org/2002/07/owl#">
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
