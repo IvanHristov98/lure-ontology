@@ -15,33 +15,23 @@
     </owl:Ontology>
 
     <!-- Class hierarchy -->
-    <owl:Class rdf:ID="School">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#hasCastingStyle" />
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#hasRetrieveStyle" />
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
+    <owl:Class rdf:ID="School"></owl:Class>
 
-    <owl:Class rdf:ID="CastingStyle"></owl:Class>
+    <School rdf:ID="SurfacePoppingSchool" />
+    <School rdf:ID="JiggingSchool" />
+    <School rdf:ID="TwitchingSchool" />
+    <School rdf:ID="JerkingSchool" />
+    <School rdf:ID="StraightRetrieveSchool" />
+    <School rdf:ID="DriftingSchool" />
 
-    <owl:ObjectProperty rdf:ID="hasCastingStyle">
-        <rdfs:domain rdf:resource="#School" />
-        <rdfs:range rdf:resource="#CastingStyle" />
-    </owl:ObjectProperty>
-
-    <owl:Class rdf:ID="RetrieveStyle"></owl:Class>
-
-    <owl:ObjectProperty rdf:ID="hasRetrieveStyle">
-        <rdfs:domain rdf:resource="#School" />
-        <rdfs:range rdf:resource="#RetrieveStyle" />
-    </owl:ObjectProperty>
-
+    <owl:AllDifferent>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <School rdf:about="SurfacePoppingSchool" />
+            <School rdf:about="JiggingSchool" />
+            <School rdf:about="TwitchingSchool" />
+            <School rdf:about="JerkingSchool" />
+            <School rdf:about="StraightRetrieveSchool" />
+            <School rdf:about="DriftingSchool" />
+        </owl:distinctMembers>
+    </owl:AllDifferent>
 </rdf:RDF>
