@@ -67,12 +67,29 @@
                 <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasJigHead" />
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasEye" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
 
     <owl:ObjectProperty rdf:ID="hasHook">
         <rdfs:domain rdf:resource="#Lure" />
         <rdfs:range rdf:resource="#Hook" />
     </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:ID="hasEye">
+        <rdfs:domain rdf:resource="#Hook" />
+        <rdfs:range rdf:resource="&xsd;boolean" />
+    </owl:DatatypeProperty>
 
     <owl:Class rdf:ID="AtomicHook">
         <rdfs:subClassOf>
@@ -83,14 +100,8 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="#hasEye" />
+                <owl:onProperty rdf:resource="#hasSize" />
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#hasJigHead" />
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -105,9 +116,9 @@
         <rdfs:range rdf:resource="&xsd;boolean" />
     </owl:DatatypeProperty>
 
-    <owl:DatatypeProperty rdf:ID="hasEye">
+    <owl:DatatypeProperty rdf:ID="hasSize">
         <rdfs:domain rdf:resource="#AtomicHook" />
-        <rdfs:range rdf:resource="&xsd;boolean" />
+        <rdfs:range rdf:resource="&xsd;integer" />
     </owl:DatatypeProperty>
 
     <owl:Class rdf:ID="JigHead">
@@ -120,7 +131,7 @@
     </owl:Class>
 
     <owl:ObjectProperty rdf:ID="hasJigHead">
-        <rdfs:domain rdf:resource="#AtomicHook" />
+        <rdfs:domain rdf:resource="#Hook" />
         <rdfs:range rdf:resource="#JigHead" />
     </owl:ObjectProperty>
 
@@ -131,174 +142,234 @@
 
     <!-- Population -->
     <!-- Jig head population -->
-    <JigHead rdf:ID="JigHead3g" />
-    <JigHead rdf:ID="JigHead5g" />
-    <JigHead rdf:ID="JigHead7g" />
+    <JigHead rdf:ID="JigHead3g">
+        <hasJigWeight rdf:datatype="&xsd;float">3.0</hasJigWeight>
+    </JigHead>
+    <JigHead rdf:ID="JigHead5g">
+        <hasJigWeight rdf:datatype="&xsd;float">5.0</hasJigWeight>
+    </JigHead>
+    <JigHead rdf:ID="JigHead7g">
+        <hasJigWeight rdf:datatype="&xsd;float">7.0</hasJigWeight>
+    </JigHead>
 
     <!-- AtomicHook population -->
-    <AtomicHook rdf:ID="BarbedEyelessHookNo2">
+    <!-- Barbed atomic hooks -->
+    <AtomicHook rdf:ID="BarbedHookNo2">
         <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
-        <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
+        <hasSize rdf:datatype="&xsd;integer">2</hasSize>
     </AtomicHook>
-    <AtomicHook rdf:ID="BarbedEyelessHookNo4">
+    <AtomicHook rdf:ID="BarbedHookNo4">
         <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
-        <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
+        <hasSize rdf:datatype="&xsd;integer">4</hasSize>
     </AtomicHook>
-    <AtomicHook rdf:ID="BarbedEyelessHookNo6">
+    <AtomicHook rdf:ID="BarbedHookNo6">
         <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
-        <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
+        <hasSize rdf:datatype="&xsd;integer">6</hasSize>
     </AtomicHook>
-    <AtomicHook rdf:ID="BarbedEyelessHookNo8">
+    <AtomicHook rdf:ID="BarbedHookNo8">
         <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
-        <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
+        <hasSize rdf:datatype="&xsd;integer">8</hasSize>
     </AtomicHook>
-    <AtomicHook rdf:ID="BarbedEyelessHookNo10">
+    <AtomicHook rdf:ID="BarbedHookNo10">
         <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
-        <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
+        <hasSize rdf:datatype="&xsd;integer">10</hasSize>
     </AtomicHook>
-    <AtomicHook rdf:ID="BarbedEyelessHookNo12">
+    <AtomicHook rdf:ID="BarbedHookNo12">
         <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
-        <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
+        <hasSize rdf:datatype="&xsd;integer">12</hasSize>
     </AtomicHook>
-    <AtomicHook rdf:ID="BarbedEyelessHookNo14">
+    <AtomicHook rdf:ID="BarbedHookNo14">
         <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
-        <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
+        <hasSize rdf:datatype="&xsd;integer">14</hasSize>
     </AtomicHook>
 
-    <AtomicHook rdf:ID="BarbedEyedHookNo2">
-        <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
-        <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
+    <!-- Barbless atomic hooks -->
+    <AtomicHook rdf:ID="BarblessHookNo2">
+        <hasBarb rdf:datatype="&xsd;boolean">false</hasBarb>
+        <hasSize rdf:datatype="&xsd;integer">2</hasSize>
     </AtomicHook>
-    <AtomicHook rdf:ID="BarbedEyedHookNo4">
-        <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
-        <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
+    <AtomicHook rdf:ID="BarblessHookNo4">
+        <hasBarb rdf:datatype="&xsd;boolean">false</hasBarb>
+        <hasSize rdf:datatype="&xsd;integer">4</hasSize>
     </AtomicHook>
-    <AtomicHook rdf:ID="BarbedEyedHookNo6">
-        <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
-        <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
+    <AtomicHook rdf:ID="BarblessHookNo6">
+        <hasBarb rdf:datatype="&xsd;boolean">false</hasBarb>
+        <hasSize rdf:datatype="&xsd;integer">6</hasSize>
     </AtomicHook>
-    <AtomicHook rdf:ID="BarbedEyedHookNo8">
-        <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
-        <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
+    <AtomicHook rdf:ID="BarblessHookNo8">
+        <hasBarb rdf:datatype="&xsd;boolean">false</hasBarb>
+        <hasSize rdf:datatype="&xsd;integer">8</hasSize>
     </AtomicHook>
-    <AtomicHook rdf:ID="BarbedEyedHookNo10">
-        <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
-        <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
+    <AtomicHook rdf:ID="BarblessHookNo10">
+        <hasBarb rdf:datatype="&xsd;boolean">false</hasBarb>
+        <hasSize rdf:datatype="&xsd;integer">10</hasSize>
     </AtomicHook>
-    <AtomicHook rdf:ID="BarbedEyedHookNo12">
-        <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
-        <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
+    <AtomicHook rdf:ID="BarblessHookNo12">
+        <hasBarb rdf:datatype="&xsd;boolean">false</hasBarb>
+        <hasSize rdf:datatype="&xsd;integer">12</hasSize>
     </AtomicHook>
-    <AtomicHook rdf:ID="BarbedEyedHookNo14">
-        <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
-        <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
+    <AtomicHook rdf:ID="BarblessHookNo14">
+        <hasBarb rdf:datatype="&xsd;boolean">false</hasBarb>
+        <hasSize rdf:datatype="&xsd;integer">14</hasSize>
     </AtomicHook>
 
-    <AtomicHook rdf:ID="BarblessEyelessHookNo2">
-        <hasBarb rdf:datatype="&xsd;boolean">false</hasBarb>
+    <!-- Hook population -->
+    <!-- Single barbed eyeless hooks -->
+    <Hook rdf:ID="SingleBarbedEyelessHookNo2">
+        <hasAtomicHook rdf:resorce="#BarbedHookNo2" />
         <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
-    </AtomicHook>
-    <AtomicHook rdf:ID="BarblessEyelessHookNo4">
-        <hasBarb rdf:datatype="&xsd;boolean">false</hasBarb>
+    </Hook>
+    <Hook rdf:ID="SingleBarbedEyelessHookNo4">
+        <hasAtomicHook rdf:resorce="#BarbedHookNo4" />
         <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
-    </AtomicHook>
-    <AtomicHook rdf:ID="BarblessEyelessHookNo6">
-        <hasBarb rdf:datatype="&xsd;boolean">false</hasBarb>
+    </Hook>
+    <Hook rdf:ID="SingleBarbedEyelessHookNo6">
+        <hasAtomicHook rdf:resorce="#BarbedHookNo6" />
         <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
-    </AtomicHook>
-    <AtomicHook rdf:ID="BarblessEyelessHookNo8">
-        <hasBarb rdf:datatype="&xsd;boolean">false</hasBarb>
+    </Hook>
+    <Hook rdf:ID="SingleBarbedEyelessHookNo8">
+        <hasAtomicHook rdf:resorce="#BarbedHookNo8" />
         <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
-    </AtomicHook>
-    <AtomicHook rdf:ID="BarblessEyelessHookNo10">
-        <hasBarb rdf:datatype="&xsd;boolean">false</hasBarb>
+    </Hook>
+    <Hook rdf:ID="SingleBarbedEyelessHookNo10">
+        <hasAtomicHook rdf:resorce="#BarbedHookNo10" />
         <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
-    </AtomicHook>
-    <AtomicHook rdf:ID="BarblessEyelessHookNo12">
-        <hasBarb rdf:datatype="&xsd;boolean">false</hasBarb>
+    </Hook>
+    <Hook rdf:ID="SingleBarbedEyelessHookNo12">
+        <hasAtomicHook rdf:resorce="#BarbedHookNo12" />
         <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
-    </AtomicHook>
-    <AtomicHook rdf:ID="BarblessEyelessHookNo14">
-        <hasBarb rdf:datatype="&xsd;boolean">false</hasBarb>
+    </Hook>
+    <Hook rdf:ID="SingleBarbedEyelessHookNo14">
+        <hasAtomicHook rdf:resorce="#BarbedHookNo14" />
         <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
-    </AtomicHook>
+    </Hook>
 
-    <AtomicHook rdf:ID="BarblessEyedHookNo2">
-        <hasBarb rdf:datatype="&xsd;boolean">false</hasBarb>
+    <!-- Single barbed eyed hooks -->
+    <Hook rdf:ID="SingleBarbedEyedHookNo2">
+        <hasAtomicHook rdf:resorce="#BarbedHookNo2" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
-    </AtomicHook>
-    <AtomicHook rdf:ID="BarblessEyedHookNo4">
-        <hasBarb rdf:datatype="&xsd;boolean">false</hasBarb>
+    </Hook>
+    <Hook rdf:ID="SingleBarbedEyedHookNo4">
+        <hasAtomicHook rdf:resorce="#BarbedHookNo4" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
-    </AtomicHook>
-    <AtomicHook rdf:ID="BarblessEyedHookNo6">
-        <hasBarb rdf:datatype="&xsd;boolean">false</hasBarb>
+    </Hook>
+    <Hook rdf:ID="SingleBarbedEyedHookNo6">
+        <hasAtomicHook rdf:resorce="#BarbedHookNo6" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
-    </AtomicHook>
-    <AtomicHook rdf:ID="BarblessEyedHookNo8">
-        <hasBarb rdf:datatype="&xsd;boolean">false</hasBarb>
+    </Hook>
+    <Hook rdf:ID="SingleBarbedEyedHookNo8">
+        <hasAtomicHook rdf:resorce="#BarbedHookNo8" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
-    </AtomicHook>
-    <AtomicHook rdf:ID="BarblessEyedHookNo10">
-        <hasBarb rdf:datatype="&xsd;boolean">false</hasBarb>
+    </Hook>
+    <Hook rdf:ID="SingleBarbedEyedHookNo10">
+        <hasAtomicHook rdf:resorce="#BarbedHookNo10" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
-    </AtomicHook>
-    <AtomicHook rdf:ID="BarblessEyedHookNo12">
-        <hasBarb rdf:datatype="&xsd;boolean">false</hasBarb>
+    </Hook>
+    <Hook rdf:ID="SingleBarbedEyedHookNo12">
+        <hasAtomicHook rdf:resorce="#BarbedHookNo12" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
-    </AtomicHook>
-    <AtomicHook rdf:ID="BarblessEyedHookNo14">
-        <hasBarb rdf:datatype="&xsd;boolean">false</hasBarb>
+    </Hook>
+    <Hook rdf:ID="SingleBarbedEyedHookNo14">
+        <hasAtomicHook rdf:resorce="#BarbedHookNo14" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
-    </AtomicHook>
+    </Hook>
 
-    <AtomicHook rdf:ID="BarbedEyedHookNo2WithJig5g">
-        <hasJigHead rdf:resource="JigHead5g"/>
-        <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
-        <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
-    </AtomicHook>
-    <AtomicHook rdf:ID="BarbedEyedHookNo2WithJig7g">
-        <hasJigHead rdf:resource="JigHead7g"/>
-        <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
-        <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
-    </AtomicHook>
+    <!-- Single barbless eyeless hooks -->
+    <Hook rdf:ID="SingleBarblessEyelessHookNo2">
+        <hasAtomicHook rdf:resorce="#BarblessHookNo2" />
+        <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
+    </Hook>
+    <Hook rdf:ID="SingleBarblessEyelessHookNo4">
+        <hasAtomicHook rdf:resorce="#BarblessHookNo4" />
+        <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
+    </Hook>
+    <Hook rdf:ID="SingleBarblessEyelessHookNo6">
+        <hasAtomicHook rdf:resorce="#BarblessHookNo6" />
+        <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
+    </Hook>
+    <Hook rdf:ID="SingleBarblessEyelessHookNo8">
+        <hasAtomicHook rdf:resorce="#BarblessHookNo8" />
+        <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
+    </Hook>
+    <Hook rdf:ID="SingleBarblessEyelessHookNo10">
+        <hasAtomicHook rdf:resorce="#BarblessHookNo10" />
+        <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
+    </Hook>
+    <Hook rdf:ID="SingleBarblessEyelessHookNo12">
+        <hasAtomicHook rdf:resorce="#BarblessHookNo12" />
+        <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
+    </Hook>
+    <Hook rdf:ID="SingleBarblessEyelessHookNo14">
+        <hasAtomicHook rdf:resorce="#BarblessHookNo14" />
+        <hasEye rdf:datatype="&xsd;boolean">false</hasEye>
+    </Hook>
 
-    <AtomicHook rdf:ID="BarbedEyedHookNo4WithJig5g">
-        <hasJigHead rdf:resource="JigHead5g"/>
-        <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
+    <!-- Single barbless eyed hooks -->
+    <Hook rdf:ID="SingleBarblessEyedHookNo2">
+        <hasAtomicHook rdf:resorce="#BarblessHookNo2" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
-    </AtomicHook>
-    <AtomicHook rdf:ID="BarbedEyedHookNo4WithJig7g">
-        <hasJigHead rdf:resource="JigHead7g"/>
-        <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
+    </Hook>
+    <Hook rdf:ID="SingleBarblessEyedHookNo4">
+        <hasAtomicHook rdf:resorce="#BarblessHookNo4" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
-    </AtomicHook>
+    </Hook>
+    <Hook rdf:ID="SingleBarblessEyedHookNo6">
+        <hasAtomicHook rdf:resorce="#BarblessHookNo6" />
+        <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
+    </Hook>
+    <Hook rdf:ID="SingleBarblessEyedHookNo8">
+        <hasAtomicHook rdf:resorce="#BarblessHookNo8" />
+        <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
+    </Hook>
+    <Hook rdf:ID="SingleBarblessEyedHookNo10">
+        <hasAtomicHook rdf:resorce="#BarblessHookNo10" />
+        <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
+    </Hook>
+    <Hook rdf:ID="SingleBarblessEyedHookNo12">
+        <hasAtomicHook rdf:resorce="#BarblessHookNo12" />
+        <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
+    </Hook>
+    <Hook rdf:ID="SingleBarblessEyedHookNo14">
+        <hasAtomicHook rdf:resorce="#BarblessHookNo14" />
+        <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
+    </Hook>
 
-    <AtomicHook rdf:ID="BarbedEyedHookNo6WithJig5g">
-        <hasJigHead rdf:resource="JigHead5g"/>
-        <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
+    <!-- Triple barbed eyed hooks -->
+    <Hook rdf:ID="TripleBarbedEyedHookNo4">
+        <hasAtomicHook rdf:resorce="#BarbedHookNo4" />
+        <hasAtomicHook rdf:resorce="#BarbedHookNo4" />
+        <hasAtomicHook rdf:resorce="#BarbedHookNo4" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
-    </AtomicHook>
-    <AtomicHook rdf:ID="BarbedEyedHookNo6WithJig7g">
-        <hasJigHead rdf:resource="JigHead7g"/>
-        <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
+    </Hook>
+    <Hook rdf:ID="TripleBarbedEyedHookNo6">
+        <hasAtomicHook rdf:resorce="#BarbedHookNo6" />
+        <hasAtomicHook rdf:resorce="#BarbedHookNo6" />
+        <hasAtomicHook rdf:resorce="#BarbedHookNo6" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
-    </AtomicHook>
-
-    <AtomicHook rdf:ID="BarbedEyedHookNo8WithJig3g">
-        <hasJigHead rdf:resource="JigHead3g"/>
-        <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
+    </Hook>
+    <Hook rdf:ID="TripleBarbedEyedHookNo8">
+        <hasAtomicHook rdf:resorce="#BarbedHookNo8" />
+        <hasAtomicHook rdf:resorce="#BarbedHookNo8" />
+        <hasAtomicHook rdf:resorce="#BarbedHookNo8" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
-    </AtomicHook>
-    <AtomicHook rdf:ID="BarbedEyedHookNo8WithJig5g">
-        <hasJigHead rdf:resource="JigHead5g"/>
-        <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
+    </Hook>
+    <Hook rdf:ID="TripleBarbedEyedHookNo10">
+        <hasAtomicHook rdf:resorce="#BarbedHookNo10" />
+        <hasAtomicHook rdf:resorce="#BarbedHookNo10" />
+        <hasAtomicHook rdf:resorce="#BarbedHookNo10" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
-    </AtomicHook>
-    <AtomicHook rdf:ID="BarbedEyedHookNo8WithJig7g">
-        <hasJigHead rdf:resource="JigHead7g"/>
-        <hasBarb rdf:datatype="&xsd;boolean">true</hasBarb>
+    </Hook>
+    <Hook rdf:ID="TripleBarbedEyedHookNo12">
+        <hasAtomicHook rdf:resorce="#BarbedHookNo12" />
+        <hasAtomicHook rdf:resorce="#BarbedHookNo12" />
+        <hasAtomicHook rdf:resorce="#BarbedHookNo12" />
         <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
-    </AtomicHook>
+    </Hook>
+    <Hook rdf:ID="TripleBarbedEyedHookNo14">
+        <hasAtomicHook rdf:resorce="#BarbedHookNo14" />
+        <hasAtomicHook rdf:resorce="#BarbedHookNo14" />
+        <hasAtomicHook rdf:resorce="#BarbedHookNo14" />
+        <hasEye rdf:datatype="&xsd;boolean">true</hasEye>
+    </Hook>
 
 </rdf:RDF>
