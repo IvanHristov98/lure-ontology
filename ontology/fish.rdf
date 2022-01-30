@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY fish "http://localhost/fish.rdf#">
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#">
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+]>
+
+<rdf:RDF xmlns="&fish;" xml:base="&fish;" xmlns:owl="&owl;" xmlns:rdf="&rdf;" xmlns:rdfs="&rdfs;" xmlns:xsd="&xsd;">
+    <!-- Metadata -->
+    <owl:Ontology rdf:about="">
+        <rdfs:comment>An ontology about lure fishing schools</rdfs:comment>
+        <rdfs:label>Lure fishing school ontology</rdfs:label>
+    </owl:Ontology>
+
+    <!-- Class hierarchy -->
+    <owl:Class rdf:ID="Fish"></owl:Class>
+
+    <owl:Class rdf:ID="CarnivorousFish">
+        <rdfs:subClassOf rdf:resource="#Fish" />
+    </owl:Class>
+
+    <owl:Class rdf:ID="OmnivorousFish">
+        <rdfs:subClassOf rdf:resource="#Fish" />
+    </owl:Class>
+
+    <owl:Class rdf:ID="HerbivorousFish">
+        <rdfs:subClassOf rdf:resource="#Fish" />
+    </owl:Class>
+
+    <!-- Fish population -->
+    <CarnivorousFish rdf:ID="Pike" />
+    <CarnivorousFish rdf:ID="Trout" />
+    <CarnivorousFish rdf:ID="Perch" />
+    <CarnivorousFish rdf:ID="Salmon" />
+    <CarnivorousFish rdf:ID="Zander" />
+    <CarnivorousFish rdf:ID="Catfish" />
+    <CarnivorousFish rdf:ID="Asp" />
+
+    <OmnivorousFish rdf:ID="Carp" />
+    <OmnivorousFish rdf:ID="Barbel" />
+    <OmnivorousFish rdf:ID="Chub" />
+    <OmnivorousFish rdf:ID="Nase" />
+    <OmnivorousFish rdf:ID="Crucian" />
+    <OmnivorousFish rdf:ID="Rudd" />
+    <OmnivorousFish rdf:ID="Sturgeon" />
+
+    <owl:AllDifferent>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <CarnivorousFish rdf:about="Pike" />
+            <CarnivorousFish rdf:about="Trout" />
+            <CarnivorousFish rdf:about="Perch" />
+            <CarnivorousFish rdf:about="Salmon" />
+            <CarnivorousFish rdf:about="Zander" />
+            <CarnivorousFish rdf:about="Catfish" />
+            <CarnivorousFish rdf:about="Asp" />
+        </owl:distinctMembers>
+    </owl:AllDifferent>
+
+    <owl:AllDifferent>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <OmnivorousFish rdf:about="Carp" />
+            <OmnivorousFish rdf:about="Barbel" />
+            <OmnivorousFish rdf:about="Chub" />
+            <OmnivorousFish rdf:about="Nase" />
+            <OmnivorousFish rdf:about="Crucian" />
+            <OmnivorousFish rdf:about="Rudd" />
+            <OmnivorousFish rdf:about="Sturgeon" />
+        </owl:distinctMembers>
+    </owl:AllDifferent>
+
+</rdf:RDF>
