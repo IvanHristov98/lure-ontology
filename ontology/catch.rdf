@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY catch "http://localhost/catch.rdf#">
+    <!ENTITY combo "http://localhost/combo.rdf#">
+    <!ENTITY lure "http://localhost/lure.rdf#">
+    <!ENTITY school "http://localhost/school.rdf#">
+    <!ENTITY fish "http://localhost/fish.rdf#">
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#">
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+]>
+
+<rdf:RDF xmlns="&catch;" xml:base="&catch;" xmlns:combo="&combo;" xmlns:lure="&lure;" xmlns:school="&school;" xmlns:owl="&owl;" xmlns:rdf="&rdf;" xmlns:rdfs="&rdfs;" xmlns:xsd="&xsd;">
+    <!-- Metadata -->
+    <owl:Ontology rdf:about="">
+        <rdfs:comment>An ontology about fish catches</rdfs:comment>
+        <rdfs:label>A fish catch ontology</rdfs:label>
+        <owl:imports rdf:resource="http://localhost/combo.rdf" />
+        <owl:imports rdf:resource="http://localhost/lure.rdf" />
+        <owl:imports rdf:resource="http://localhost/school.rdf" />
+    </owl:Ontology>
+
+    <!-- Catch class hierarchy -->
+    <owl:Class rdf:ID="Catch">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#withCombo" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#withLure" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#fromSchool" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ofFish" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:ObjectProperty rdf:ID="withCombo">
+        <rdfs:domain rdf:resource="#Catch" />
+        <rdfs:range rdf:resource="&combo;Combo" />
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:ID="withLure">
+        <rdfs:domain rdf:resource="#Catch" />
+        <rdfs:range rdf:resource="&lure;Lure" />
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:ID="fromSchool">
+        <rdfs:domain rdf:resource="#Catch" />
+        <rdfs:range rdf:resource="&school;School" />
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:ID="ofFish">
+        <rdfs:domain rdf:resource="#Catch" />
+        <rdfs:range rdf:resource="&fish;Fish" />
+    </owl:ObjectProperty>
+
+</rdf:RDF>

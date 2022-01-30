@@ -16,41 +16,6 @@
         <owl:imports rdf:resource="http://localhost/material.rdf" />
     </owl:Ontology>
 
-    <!-- Rig class hierarchy -->
-    <owl:Class rdf:ID="Rig">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#hasRigLeader" />
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#hasLure" />
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-
-    <owl:Class rdf:ID="RigLeader">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#hasRigLeaderMaterial" />
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-
-    <owl:ObjectProperty rdf:ID="hasRigLeader">
-        <rdfs:domain rdf:resource="#Rig" />
-        <rdfs:range rdf:resource="#RigLeader" />
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:ID="hasRigLeaderMaterial">
-        <rdfs:domain rdf:resource="#RigLeader" />
-        <rdfs:range rdf:resource="&mat;Material" />
-    </owl:ObjectProperty>
-
     <!-- Lure class hierarchy -->
     <owl:Class rdf:ID="Lure">
         <rdfs:subClassOf>
@@ -78,11 +43,6 @@
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
-
-    <owl:ObjectProperty rdf:ID="hasLure">
-        <rdfs:domain rdf:resource="#Rig" />
-        <rdfs:range rdfs:range="#Lure" />
-    </owl:ObjectProperty>
 
     <owl:DatatypeProperty rdf:ID="hasLength">
         <rdfs:domain rdf:resource="#Lure" />
