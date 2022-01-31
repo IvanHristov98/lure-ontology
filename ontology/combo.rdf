@@ -166,7 +166,7 @@
 
     <owl:DatatypeProperty rdf:ID="hasWeight">
         <rdfs:domain rdf:resource="#Rod" />
-        <rdfs:range rdf:resource="&xsd;decimal" />
+        <rdfs:range rdf:resource="&xsd;integer" />
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:ID="hasAction">
@@ -201,7 +201,6 @@
         <hasGearRatio rdf:datatype="&xsd;float">6.0</hasGearRatio>
         <hasAntiReverseHandle rdf:datatype="&xsd;boolean">true</hasAntiReverseHandle>
     </SpinningReel>
-
     <SpinningReel rdf:ID="CheapSlowGraphiteSpinningReel">
         <hasSpool rdf:resource="#GraphiteSpinningSpool" />
         <hasBearingCount rdf:datatype="&xsd;positiveInteger">5</hasBearingCount>
@@ -209,7 +208,6 @@
         <hasGearRatio rdf:datatype="&xsd;float">3.0</hasGearRatio>
         <hasAntiReverseHandle rdf:datatype="&xsd;boolean">false</hasAntiReverseHandle>
     </SpinningReel>
-
     <SpinningReel rdf:ID="FastAluminiumSpinningReel">
         <hasSpool rdf:resource="#AluminiumSpinningSpool" />
         <hasBearingCount rdf:datatype="&xsd;positiveInteger">8</hasBearingCount>
@@ -225,7 +223,6 @@
         <hasGearRatio rdf:datatype="&xsd;float">1.0</hasGearRatio>
         <hasAntiReverseHandle rdf:datatype="&xsd;boolean">true</hasAntiReverseHandle>
     </FlyReel>
-
     <FlyReel rdf:ID="CheapGraphiteFlyReel">
         <hasSpool rdf:resource="#AluminiumSpinningSpool" />
         <hasBearingCount rdf:datatype="&xsd;positiveInteger">5</hasBearingCount>
@@ -233,5 +230,31 @@
         <hasGearRatio rdf:datatype="&xsd;float">1.0</hasGearRatio>
         <hasAntiReverseHandle rdf:datatype="&xsd;boolean">false</hasAntiReverseHandle>
     </FlyReel>
+
+    <!-- Rod population -->
+    <Rod rdf:ID="HeavySpinningRod">
+        <hasLength rdf:datatype="&xsd;decimal">2.8</hasLength>
+        <hasWeight rdf:datatype="&xsd;integer">280</hasWeight>
+        <hasAction rdf:datatype="&xsd;decimal">0.15</hasAction>
+        <hasRodMaterial rdf:resource="&mat;Fiberglass" />
+    </Rod>
+    <Rod rdf:ID="LightSpinningRod">
+        <hasLength rdf:datatype="&xsd;decimal">2.8</hasLength>
+        <hasWeight rdf:datatype="&xsd;integer">116</hasWeight>
+        <hasAction rdf:datatype="&xsd;decimal">0.3</hasAction>
+        <hasRodMaterial rdf:resource="&mat;Fiberglass" />
+    </Rod>
+    <Rod rdf:ID="HeavyFlyRod">
+        <hasLength rdf:datatype="&xsd;decimal">2.9</hasLength>
+        <hasWeight rdf:datatype="&xsd;integer">300</hasWeight>
+        <hasAction rdf:datatype="&xsd;decimal">0.15</hasAction>
+        <hasRodMaterial rdf:resource="&mat;Fiberglass" />
+    </Rod>
+    <Rod rdf:ID="LightFlyRod">
+        <hasLength rdf:datatype="&xsd;decimal">2.9</hasLength>
+        <hasWeight rdf:datatype="&xsd;integer">128</hasWeight>
+        <hasAction rdf:datatype="&xsd;decimal">0.3</hasAction>
+        <hasRodMaterial rdf:resource="&mat;Carbon" />
+    </Rod>
 
 </rdf:RDF>

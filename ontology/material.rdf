@@ -145,6 +145,12 @@
         <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
     </SyntheticMaterial>
 
+    <SyntheticMaterial rdf:ID="Fiberglass">
+        <hasHardness rdf:resource="#Medium" />
+        <isRigid rdf:datatype="&xsd;boolean">true</isRigid>
+        <isExtensible rdf:datatype="&xsd;boolean">false</isExtensible>
+    </SyntheticMaterial>
+
     <SyntheticMaterial rdf:ID="Monofil">
         <hasHardness rdf:resource="#Soft"></hasHardness>
         <isRigid rdf:datatype="&xsd;boolean">true</isRigid>
@@ -279,6 +285,7 @@
             <SyntheticMaterial rdf:about="#Carbon" />
             <SyntheticMaterial rdf:about="#Monofil" />
             <SyntheticMaterial rdf:about="#FluoroCarbon" />
+            <SyntheticMaterial rdf:about="#Fiberglass" />
         </owl:distinctMembers>
     </owl:AllDifferent>
 
