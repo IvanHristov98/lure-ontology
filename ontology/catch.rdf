@@ -70,19 +70,19 @@
     </owl:ObjectProperty>
 
     <!-- Combo population -->
-    <combo:Combo id="JuniorSpinningCombo">
+    <combo:Combo rdf:ID="JuniorSpinningCombo">
         <hasReel rdf:resource="&combo;CheapSlowGraphiteSpinningReel" />
         <hasRod rdf:resource="&combo;HeavySpinningRod" />
     </combo:Combo>
-    <combo:Combo id="SeniorSpinningCombo">
+    <combo:Combo rdf:ID="SeniorSpinningCombo">
         <hasReel rdf:resource="&combo;FastAluminiumSpinningReel" />
         <hasRod rdf:resource="&combo;LightSpinningRod" />
     </combo:Combo>
-    <combo:Combo id="JuniorFlyCombo">
+    <combo:Combo rdf:ID="JuniorFlyCombo">
         <hasReel rdf:resource="&combo;CheapGraphiteFlyReel" />
         <hasRod rdf:resource="&combo;HeavyFlyRod" />
     </combo:Combo>
-    <combo:Combo id="SeniorFlyCombo">
+    <combo:Combo rdf:ID="SeniorFlyCombo">
         <hasReel rdf:resource="&combo;AluminiumFlyReel" />
         <hasRod rdf:resource="&combo;LightFlyRod" />
     </combo:Combo>
