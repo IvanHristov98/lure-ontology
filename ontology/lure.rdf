@@ -432,13 +432,6 @@
         <hasHook rdf:resource="#TripleBarbedEyedHookNo6" />
         <hasBodyMaterial rdf:resource="&mat;Pine" />
     </Lure>
-    <Lure rdf:ID="KambiWobbler">
-        <hasLength rdf:datatype="&xsd;decimal">11.0</hasLength>
-        <hasWeight rdf:datatype="&xsd;decimal">18</hasWeight>
-        <hasHook rdf:resource="#TripleBarbedEyedHookNo6" />
-        <hasHook rdf:resource="#TripleBarbedEyedHookNo6" />
-        <hasBodyMaterial rdf:resource="&mat;Pine" />
-    </Lure>
     <Lure rdf:ID="SmashThePopper">
         <hasLength rdf:datatype="&xsd;decimal">7.0</hasLength>
         <hasWeight rdf:datatype="&xsd;decimal">5</hasWeight>
