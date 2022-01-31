@@ -179,4 +179,59 @@
         <rdfs:range rdf:resource="&mat;Material" />
     </owl:ObjectProperty>
 
+    <!-- Spool population -->
+    <Spool rdf:ID="GraphiteSpinningSpool">
+        <hasSpoolMaterial rdf:resource="&mat;SyntheticGraphite" />
+    </Spool>
+    <Spool rdf:ID="AluminiumSpinningSpool">
+        <hasSpoolMaterial rdf:resource="&mat;Aluminium" />
+    </Spool>
+    <Spool rdf:ID="GraphiteFlySpool">
+        <hasSpoolMaterial rdf:resource="&mat;SyntheticGraphite" />
+    </Spool>
+    <Spool rdf:ID="AluminiumFlySpool">
+        <hasSpoolMaterial rdf:resource="&mat;Aluminium" />
+    </Spool>
+
+    <!-- Reel population -->
+    <SpinningReel rdf:ID="FastGraphiteSpinningReel">
+        <hasSpool rdf:resource="#GraphiteSpinningSpool" />
+        <hasBearingCount rdf:datatype="&xsd;positiveInteger">7</hasBearingCount>
+        <hasDrag rdf:datatype="&xsd;boolean">true</hasDrag>
+        <hasGearRatio rdf:datatype="&xsd;float">6.0</hasGearRatio>
+        <hasAntiReverseHandle rdf:datatype="&xsd;boolean">true</hasAntiReverseHandle>
+    </SpinningReel>
+
+    <SpinningReel rdf:ID="CheapSlowGraphiteSpinningReel">
+        <hasSpool rdf:resource="#GraphiteSpinningSpool" />
+        <hasBearingCount rdf:datatype="&xsd;positiveInteger">5</hasBearingCount>
+        <hasDrag rdf:datatype="&xsd;boolean">true</hasDrag>
+        <hasGearRatio rdf:datatype="&xsd;float">3.0</hasGearRatio>
+        <hasAntiReverseHandle rdf:datatype="&xsd;boolean">false</hasAntiReverseHandle>
+    </SpinningReel>
+
+    <SpinningReel rdf:ID="FastAluminiumSpinningReel">
+        <hasSpool rdf:resource="#AluminiumSpinningSpool" />
+        <hasBearingCount rdf:datatype="&xsd;positiveInteger">8</hasBearingCount>
+        <hasDrag rdf:datatype="&xsd;boolean">true</hasDrag>
+        <hasGearRatio rdf:datatype="&xsd;float">6.0</hasGearRatio>
+        <hasAntiReverseHandle rdf:datatype="&xsd;boolean">true</hasAntiReverseHandle>
+    </SpinningReel>
+
+    <FlyReel rdf:ID="AluminiumFlyReel">
+        <hasSpool rdf:resource="#AluminiumFlySpool" />
+        <hasBearingCount rdf:datatype="&xsd;positiveInteger">8</hasBearingCount>
+        <hasDrag rdf:datatype="&xsd;boolean">true</hasDrag>
+        <hasGearRatio rdf:datatype="&xsd;float">1.0</hasGearRatio>
+        <hasAntiReverseHandle rdf:datatype="&xsd;boolean">true</hasAntiReverseHandle>
+    </FlyReel>
+
+    <FlyReel rdf:ID="CheapGraphiteFlyReel">
+        <hasSpool rdf:resource="#AluminiumSpinningSpool" />
+        <hasBearingCount rdf:datatype="&xsd;positiveInteger">5</hasBearingCount>
+        <hasDrag rdf:datatype="&xsd;boolean">false</hasDrag>
+        <hasGearRatio rdf:datatype="&xsd;float">1.0</hasGearRatio>
+        <hasAntiReverseHandle rdf:datatype="&xsd;boolean">false</hasAntiReverseHandle>
+    </FlyReel>
+
 </rdf:RDF>
