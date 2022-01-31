@@ -11,7 +11,7 @@
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
 ]>
 
-<rdf:RDF xmlns="&catch;" xml:base="&catch;" xmlns:combo="&combo;" xmlns:lure="&lure;" xmlns:school="&school;" xmlns:owl="&owl;" xmlns:rdf="&rdf;" xmlns:rdfs="&rdfs;" xmlns:xsd="&xsd;">
+<rdf:RDF xmlns="&catch;" xml:base="&catch;" xmlns:combo="&combo;" xmlns:lure="&lure;" xmlns:school="&school;" xmlns:fish="&fish;" xmlns:owl="&owl;" xmlns:rdf="&rdf;" xmlns:rdfs="&rdfs;" xmlns:xsd="&xsd;">
     <!-- Metadata -->
     <owl:Ontology rdf:about="">
         <rdfs:comment>An ontology about fish catches</rdfs:comment>
@@ -19,6 +19,7 @@
         <owl:imports rdf:resource="http://localhost/combo.rdf" />
         <owl:imports rdf:resource="http://localhost/lure.rdf" />
         <owl:imports rdf:resource="http://localhost/school.rdf" />
+        <owl:imports rdf:resource="http://localhost/fish.rdf" />
     </owl:Ontology>
 
     <!-- Catch class hierarchy -->
