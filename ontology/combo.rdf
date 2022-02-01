@@ -242,7 +242,7 @@
         <hasLength rdf:datatype="&xsd;decimal">2.8</hasLength>
         <hasWeight rdf:datatype="&xsd;integer">116</hasWeight>
         <hasAction rdf:datatype="&xsd;decimal">0.3</hasAction>
-        <hasRodMaterial rdf:resource="&mat;Fiberglass" />
+        <hasRodMaterial rdf:resource="&mat;Carbon" />
     </Rod>
     <Rod rdf:ID="HeavyFlyRod">
         <hasLength rdf:datatype="&xsd;decimal">2.9</hasLength>
