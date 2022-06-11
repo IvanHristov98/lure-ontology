@@ -5,13 +5,14 @@
     <!ENTITY lure "http://localhost/lure.rdf#">
     <!ENTITY school "http://localhost/school.rdf#">
     <!ENTITY fish "http://localhost/fish.rdf#">
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/">
     <!ENTITY owl "http://www.w3.org/2002/07/owl#">
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
 ]>
 
-<rdf:RDF xmlns="&catch;" xml:base="&catch;" xmlns:catch="&catch;" xmlns:combo="&combo;" xmlns:lure="&lure;" xmlns:school="&school;" xmlns:fish="&fish;" xmlns:owl="&owl;" xmlns:rdf="&rdf;" xmlns:rdfs="&rdfs;" xmlns:xsd="&xsd;">
+<rdf:RDF xmlns="&catch;" xml:base="&catch;" xmlns:catch="&catch;" xmlns:combo="&combo;" xmlns:lure="&lure;" xmlns:school="&school;" xmlns:fish="&fish;" xmlns:owl="&owl;" xmlns:rdf="&rdf;" xmlns:rdfs="&rdfs;" xmlns:xsd="&xsd;" xmlns:foaf="&foaf;">
     <!-- Metadata -->
     <owl:Ontology rdf:about="">
         <rdfs:comment>An ontology about fish catches</rdfs:comment>
@@ -20,6 +21,7 @@
         <owl:imports rdf:resource="http://localhost/lure.rdf" />
         <owl:imports rdf:resource="http://localhost/school.rdf" />
         <owl:imports rdf:resource="http://localhost/fish.rdf" />
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/" />
     </owl:Ontology>
 
     <!-- Catch class hierarchy -->
@@ -45,6 +47,12 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="#ofFish" />
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#caughtBy" />
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -74,6 +82,11 @@
         <rdfs:range rdf:resource="&fish;Fish" />
     </owl:ObjectProperty>
 
+    <owl:ObjectProperty rdf:ID="caughtBy">
+        <rdfs:domain rdf:resource="#Catch" />
+        <rdfs:range rdf:resource="&foaf;Person" />
+    </owl:ObjectProperty>
+
     <!-- Combo population -->
     <combo:Combo rdf:ID="JuniorSpinningCombo">
         <hasReel rdf:resource="&combo;CheapSlowGraphiteSpinningReel" />
@@ -99,42 +112,49 @@
         <withLure rdf:resource="&lure;PheasantTailNymph" />
         <fromSchool rdf:resource="&school;DriftingSchool" />
         <ofFish rdf:resource="&fish;Trout" />
+        <caughtBy rdf:resource="#Shrek" />
     </Catch>
     <Catch rdf:ID="Trout2">
         <withCombo rdf:resource="#JuniorFlyCombo" />
         <withLure rdf:resource="&lure;GoldRibbedHaresEarNymph" />
         <fromSchool rdf:resource="&school;DriftingSchool" />
         <ofFish rdf:resource="&fish;Trout" />
+        <caughtBy rdf:resource="#Donkey" />
     </Catch>
     <Catch rdf:ID="Trout3">
         <withCombo rdf:resource="#SeniorFlyCombo" />
         <withLure rdf:resource="&lure;PheasantTailNymph" />
         <fromSchool rdf:resource="&school;DriftingSchool" />
         <ofFish rdf:resource="&fish;Trout" />
+        <caughtBy rdf:resource="#Shrek" />
     </Catch>
     <Catch rdf:ID="Trout4">
         <withCombo rdf:resource="#SeniorFlyCombo" />
         <withLure rdf:resource="&lure;GoldRibbedHaresEarNymph" />
         <fromSchool rdf:resource="&school;DriftingSchool" />
         <ofFish rdf:resource="&fish;Trout" />
+        <caughtBy rdf:resource="#Shrek" />
     </Catch>
     <Catch rdf:ID="Trout5">
         <withCombo rdf:resource="#SeniorFlyCombo" />
         <withLure rdf:resource="&lure;GoldRibbedHaresEarNymph" />
         <fromSchool rdf:resource="&school;DriftingSchool" />
         <ofFish rdf:resource="&fish;Trout" />
+        <caughtBy rdf:resource="#Donkey" />
     </Catch>
     <Catch rdf:ID="Trout6">
         <withCombo rdf:resource="#SeniorFlyCombo" />
         <withLure rdf:resource="&lure;IronLotusNymph" />
         <fromSchool rdf:resource="&school;DriftingSchool" />
         <ofFish rdf:resource="&fish;Trout" />
+        <caughtBy rdf:resource="#Shrek" />
     </Catch>
     <Catch rdf:ID="Trout7">
         <withCombo rdf:resource="#JuniorSpinningCombo" />
         <withLure rdf:resource="&lure;BeebopWobbler" />
         <fromSchool rdf:resource="&school;JerkingSchool" />
         <ofFish rdf:resource="&fish;Trout" />
+        <caughtBy rdf:resource="#Donkey" />
     </Catch>
 
     <!-- Perch -->
@@ -143,18 +163,21 @@
         <withLure rdf:resource="&lure;BeebopWobbler" />
         <fromSchool rdf:resource="&school;TwitchingSchool" />
         <ofFish rdf:resource="&fish;Perch" />
+        <caughtBy rdf:resource="#Donkey" />
     </Catch>
     <Catch rdf:ID="Perch2">
         <withCombo rdf:resource="#JuniorSpinningCombo" />
         <withLure rdf:resource="&lure;LaptaWobbler" />
         <fromSchool rdf:resource="&school;TwitchingSchool" />
         <ofFish rdf:resource="&fish;Perch" />
+        <caughtBy rdf:resource="#Shrek" />
     </Catch>
     <Catch rdf:ID="Perch3">
         <withCombo rdf:resource="#SeniorSpinningCombo" />
         <withLure rdf:resource="&lure;LaptaWobbler" />
         <fromSchool rdf:resource="&school;JerkingSchool" />
         <ofFish rdf:resource="&fish;Perch" />
+        <caughtBy rdf:resource="#Donkey" />
     </Catch>
     <Catch rdf:ID="Perch4">
         <withCombo rdf:resource="#SeniorSpinningCombo" />
@@ -167,6 +190,7 @@
         <withLure rdf:resource="&lure;BoogeyWoogeyWobbler" />
         <fromSchool rdf:resource="&school;TwitchingSchool" />
         <ofFish rdf:resource="&fish;Perch" />
+        <caughtBy rdf:resource="#Shrek" />
     </Catch>
 
     <!-- Pike -->
@@ -175,30 +199,45 @@
         <withLure rdf:resource="&lure;WomburTomburWobbler" />
         <fromSchool rdf:resource="&school;TwitchingSchool" />
         <ofFish rdf:resource="&fish;Pike" />
+        <caughtBy rdf:resource="#Donkey" />
     </Catch>
     <Catch rdf:ID="Pike2">
         <withCombo rdf:resource="#JuniorSpinningCombo" />
         <withLure rdf:resource="&lure;KambiWobbler" />
         <fromSchool rdf:resource="&school;JerkingSchool" />
         <ofFish rdf:resource="&fish;Pike" />
+        <caughtBy rdf:resource="#Donkey" />
     </Catch>
     <Catch rdf:ID="Pike3">
         <withCombo rdf:resource="#SeniorSpinningCombo" />
         <withLure rdf:resource="&lure;BingoRingoWobbler" />
         <fromSchool rdf:resource="&school;JerkingSchool" />
         <ofFish rdf:resource="&fish;Pike" />
+        <caughtBy rdf:resource="#Donkey" />
     </Catch>
     <Catch rdf:ID="Pike4">
         <withCombo rdf:resource="#SeniorSpinningCombo" />
         <withLure rdf:resource="&lure;BingoRingoWobbler" />
         <fromSchool rdf:resource="&school;JerkingSchool" />
         <ofFish rdf:resource="&fish;Pike" />
+        <caughtBy rdf:resource="#Donkey" />
     </Catch>
     <Catch rdf:ID="Pike5">
         <withCombo rdf:resource="#SeniorSpinningCombo" />
         <withLure rdf:resource="&lure;TikkiPopper" />
         <fromSchool rdf:resource="&school;SurfacePoppingSchool" />
         <ofFish rdf:resource="&fish;Pike" />
+        <caughtBy rdf:resource="#Shrek" />
     </Catch>
+
+    <foaf:Person rdf:ID="Donkey">
+        <foaf:givenname>Donkey</foaf:givenname>
+        <foaf:family_name>Hamsterson</foaf:family_name>
+    </foaf:Person>
+
+    <foaf:Person rdf:ID="Shrek">
+        <foaf:givenname>Shrek</foaf:givenname>
+        <foaf:family_name>Shrekinson</foaf:family_name>
+    </foaf:Person>
 
 </rdf:RDF>

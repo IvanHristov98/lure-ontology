@@ -1,4 +1,5 @@
 # ==== Reasoning demo with inverse property ====
+# ==== Selects individuals ====
 # Selects all lures that have caught trouts.
 
 PREFIX lure: <http://localhost/lure.rdf#>
@@ -14,6 +15,7 @@ SELECT DISTINCT ?lure ?species WHERE {
 
 
 # ==== Reasoning demo with transitive property ====
+# ==== Selects classes ====
 # Selects all material classes that are natural.
 # Without reasoning it would output only the direct children of mat:NaturalMaterial.
 
@@ -25,6 +27,7 @@ SELECT DISTINCT ?natMat WHERE {
 }
 
 # ==== Reasoning demo with inverse property ====
+# ==== Selects individuals ====
 # ==== Demo for query with > 1 concept and more than 1 FILTER ====
 # ==== Demo for query using set operations (UNION) ====
 # Selects all of the lures with their respective materials which 
@@ -49,6 +52,7 @@ SELECT DISTINCT ?lure ?material WHERE {
 }
 
 # ==== Demo for query with > 1 concept and more than 1 FILTER ====
+# ==== Selects individuals ====
 # Selects silicone lures that had jig heads with a weight of 7 grams.
 
 PREFIX mat: <http://localhost/material.rdf#>
@@ -69,6 +73,7 @@ SELECT DISTINCT ?lure WHERE {
 
 # ==== Demo for query with > 1 concept and more than 1 FILTER ====
 # ==== Demo for query using set operations (UNION) ====
+# ==== Selects individuals ====
 # Selects all lures that are either made of metal and caught trout 
 # or made of wood and caught pike.
 
@@ -95,4 +100,36 @@ SELECT DISTINCT ?lure WHERE {
         FILTER EXISTS { ?matType rdfs:subClassOf mat:Wood } .
         FILTER (?fish = fish:Pike)
     }
+}
+
+# ==== Demo for BIND ====
+# Selects the names of the fishermen in a pretty way.
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX : <http://localhost/school.rdf#>
+PREFIX catch: <http://localhost/catch.rdf#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT DISTINCT ?catch ?name WHERE { 
+    ?catch rdf:type catch:Catch .
+    ?catch catch:caughtBy ?person .
+    ?person foaf:givenname ?givenName .
+    ?person foaf:family_name ?familyName .
+    BIND(CONCAT("sir ", ?givenName, " ", ?familyName, " the relentless") as ?name)
+}
+
+# ==== Demo for BIND ====
+# Selects all rods with a power greater than 0.5.
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX : <http://localhost/school.rdf#>
+PREFIX combo: <http://localhost/combo.rdf#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT DISTINCT ?rod ?power WHERE { 
+    ?rod rdf:type combo:Rod .
+    ?rod combo:hasLength ?rodLength .
+    ?rod combo:hasAction ?rodAction .
+    BIND(xsd:decimal(?rodLength)*?rodAction AS ?power) .
+    FILTER(?power > 0.5)   
 }
