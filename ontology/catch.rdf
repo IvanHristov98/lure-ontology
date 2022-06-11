@@ -60,6 +60,10 @@
         <rdfs:range rdf:resource="&lure;Lure" />
     </owl:ObjectProperty>
 
+    <owl:ObjectProperty rdf:ID="lureHasCatch">
+        <owl:inverseOf rdf:resource="#withLure"/>
+    </owl:ObjectProperty>
+
     <owl:ObjectProperty rdf:ID="fromSchool">
         <rdfs:domain rdf:resource="#Catch" />
         <rdfs:range rdf:resource="&school;School" />

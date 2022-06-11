@@ -1,0 +1,13 @@
+# ==== Reasoning demo with inverse property ====
+# Selects all lures that have caught trouts.
+
+PREFIX lure: <http://localhost/lure.rdf#>
+PREFIX catch: <http://localhost/catch.rdf#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX fish: <http://localhost/fish.rdf#>
+SELECT DISTINCT ?lure ?species WHERE { 
+	?lure rdf:type lure:Lure .
+    ?lure catch:lureHasCatch ?fish .
+    ?fish catch:ofFish fish:Trout
+}
