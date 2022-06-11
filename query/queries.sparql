@@ -103,6 +103,7 @@ SELECT DISTINCT ?lure WHERE {
 }
 
 # ==== Demo for BIND ====
+# ==== Selects individuals ====
 # Selects the names of the fishermen in a pretty way.
 
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -119,6 +120,7 @@ SELECT DISTINCT ?catch ?name WHERE {
 }
 
 # ==== Demo for BIND ====
+# ==== Selects individuals ====
 # Selects all rods with a power greater than 0.5.
 
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -132,4 +134,103 @@ SELECT DISTINCT ?rod ?power WHERE {
     ?rod combo:hasAction ?rodAction .
     BIND(xsd:decimal(?rodLength)*?rodAction AS ?power) .
     FILTER(?power > 0.5)   
+}
+
+# ==== Selects classes ====
+# Selects the body material types of all lures to have caught trout.
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX : <http://localhost/school.rdf#>
+PREFIX combo: <http://localhost/combo.rdf#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX lure: <http://localhost/lure.rdf#>
+PREFIX catch: <http://localhost/catch.rdf#>
+PREFIX fish: <http://localhost/fish.rdf#>
+SELECT DISTINCT ?bodyMatType WHERE { 
+    ?lure rdf:type lure:Lure .
+    ?lure catch:lureHasCatch ?catch .
+    ?catch catch:ofFish ?fish .
+    FILTER (?fish = fish:Trout) .
+    ?lure lure:hasBodyMaterial ?bodyMat .
+    ?bodyMat rdf:type ?bodyMatType
+}
+
+# Reasons that mat:MallardFlankFeather is a mat:Material.
+
+PREFIX mat: <http://localhost/material.rdf#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?feather WHERE { 
+	mat:NaturalMaterial rdfs:subClassOf mat:Material .
+    mat:Animal rdfs:subClassOf mat:NaturalMaterial .
+    mat:Feather rdfs:subClassOf mat:Animal .
+    ?feather rdf:type mat:Feather .
+}
+
+# Returns all lures to have caught a trout.
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX lure: <http://localhost/lure.rdf#>
+PREFIX catch: <http://localhost/catch.rdf#>
+PREFIX fish: <http://localhost/fish.rdf#>
+SELECT ?lure ?catch WHERE { 
+	?lure rdf:type lure:Lure .
+    ?catch catch:ofFish fish:Trout .
+    ?catch catch:withLure ?lure .
+}
+
+# Finds all schools that were successful in the fishing of trout.
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX catch: <http://localhost/catch.rdf#>
+PREFIX fish: <http://localhost/fish.rdf#>
+PREFIX school: <http://localhost/school.rdf#>
+SELECT DISTINCT ?school WHERE { 
+	?school rdf:type school:School .
+    ?catch catch:ofFish fish:Trout .
+    ?catch catch:fromSchool ?school .
+}
+
+# Finds the most successful trout fishing school.
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX catch: <http://localhost/catch.rdf#>
+PREFIX fish: <http://localhost/fish.rdf#>
+PREFIX school: <http://localhost/school.rdf#>
+SELECT ?school (count(?school) as ?c) WHERE { 
+	?school rdf:type school:School .
+    ?catch catch:ofFish fish:Trout .
+    ?catch catch:fromSchool ?school .
+} 
+GROUP BY ?school
+ORDER BY DESC(?c)
+LIMIT 1
+
+# Finds the materials used to make spools.
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX mat: <http://localhost/material.rdf#>
+PREFIX combo: <http://localhost/combo.rdf#>
+
+SELECT DISTINCT ?material WHERE { 
+	?material rdf:type mat:Material .
+    ?spool rdf:type combo:Spool .
+    ?spool combo:hasSpoolMaterial ?material .
+}
+
+# Shows what lures are made out of peacock feathers.
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX mat: <http://localhost/material.rdf#>
+PREFIX lure: <http://localhost/lure.rdf#>
+
+SELECT DISTINCT ?lure WHERE { 
+	?lure rdf:type lure:Lure .
+    ?lure lure:hasBodyMaterial mat:PeacockFeather .
 }
