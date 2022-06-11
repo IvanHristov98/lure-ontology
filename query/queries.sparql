@@ -11,3 +11,39 @@ SELECT DISTINCT ?lure ?species WHERE {
     ?lure catch:lureHasCatch ?fish .
     ?fish catch:ofFish fish:Trout
 }
+
+
+# ==== Reasoning demo with transitive property ====
+# Selects all material classes that are natural.
+# Without reasoning it would output only the direct children of mat:NaturalMaterial.
+
+PREFIX mat: <http://localhost/material.rdf#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?natMat WHERE { 
+	?natMat rdfs:subClassOf mat:NaturalMaterial
+}
+
+# ==== Reasoning demo with inverse property ====
+# ==== Demo for query with > 1 concept and more than 1 FILTER ====
+# ==== Demo for query using set operations (UNION) ====
+# Selects all of the lures with their respective materials which 
+# are heavier than 10 grams and longer than 9 centimeters
+# either made of wood or a fusion (e.g. steel).
+
+PREFIX mat: <http://localhost/material.rdf#>
+PREFIX lure: <http://localhost/lure.rdf#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX : <http://localhost/school.rdf#>
+SELECT DISTINCT ?lure ?material WHERE { 
+	?material lure:bodyMaterialOf ?lure .
+    ?lure lure:hasWeight ?weight .
+    FILTER (?weight > 10) .
+    ?lure lure:hasLength ?length .
+    FILTER (?length > 9)
+    ?material rdf:type ?matType .
+    { ?matType rdfs:subClassOf mat:Wood }
+    UNION
+    { ?matType rdfs:subClassOf mat:Fusion }
+}

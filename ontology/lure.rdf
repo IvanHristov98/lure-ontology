@@ -59,6 +59,10 @@
         <rdfs:range rdf:resource="&mat;Material" />
     </owl:ObjectProperty>
 
+    <owl:ObjectProperty  rdf:ID="bodyMaterialOf">
+        <owl:inverseOf rdf:resource="#hasBodyMaterial"/>
+    </owl:ObjectProperty>
+
     <!-- Hook class hierarchy -->
     <owl:Class rdf:ID="Hook">
         <rdfs:subClassOf>
@@ -506,6 +510,12 @@
         <hasHook rdf:resource="#SingleBarblessEyedHookNo14" />
         <hasBodyMaterial rdf:resource="&mat;Tungsten" />
         <hasBodyMaterial rdf:resource="&mat;CoqDeLeonFeather" />
+    </Lure>
+    <Lure rdf:ID="FiveOfDiamonds">
+        <hasLength rdf:datatype="&xsd;decimal">9.7</hasLength>
+        <hasWeight rdf:datatype="&xsd;decimal">11</hasWeight>
+        <hasHook rdf:resource="#SingleBarblessEyedHookNo8" />
+        <hasBodyMaterial rdf:resource="&mat;Steel" />
     </Lure>
 
 </rdf:RDF>
