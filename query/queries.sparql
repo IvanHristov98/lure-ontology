@@ -47,3 +47,21 @@ SELECT DISTINCT ?lure ?material WHERE {
     UNION
     { ?matType rdfs:subClassOf mat:Fusion }
 }
+
+# ==== Demo for query with > 1 concept and more than 1 FILTER ====
+# Selects silicone lures that had jig heads with a weight of 7 grams.
+
+PREFIX mat: <http://localhost/material.rdf#>
+PREFIX lure: <http://localhost/lure.rdf#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX : <http://localhost/school.rdf#>
+SELECT DISTINCT ?lure WHERE { 
+    ?lure rdf:type lure:Lure .
+    FILTER EXISTS { ?lure lure:hasBodyMaterial mat:Silicone } .
+    ?lure lure:hasHook ?hook .
+    ?hook rdf:type lure:Hook .
+    ?hook lure:hasJigHead ?jigHead .
+    ?jigHead lure:hasJigWeight ?jigWeight .
+    FILTER (?jigWeight = 7)
+}
