@@ -65,3 +65,34 @@ SELECT DISTINCT ?lure WHERE {
     ?jigHead lure:hasJigWeight ?jigWeight .
     FILTER (?jigWeight = 7)
 }
+
+
+# ==== Demo for query with > 1 concept and more than 1 FILTER ====
+# ==== Demo for query using set operations (UNION) ====
+# Selects all lures that are either made of metal and caught trout 
+# or made of wood and caught pike.
+
+PREFIX mat: <http://localhost/material.rdf#>
+PREFIX lure: <http://localhost/lure.rdf#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX : <http://localhost/school.rdf#>
+PREFIX catch: <http://localhost/catch.rdf#>
+PREFIX fish: <http://localhost/fish.rdf#>
+SELECT DISTINCT ?lure WHERE { 
+    ?catch rdf:type catch:Catch .
+    ?catch catch:withLure ?lure .
+    ?lure rdf:type lure:Lure .
+    ?catch catch:ofFish ?fish .
+    ?lure lure:hasBodyMaterial ?bodyMat . 
+    ?bodyMat rdf:type ?matType .
+    { 
+        FILTER EXISTS { ?matType rdfs:subClassOf mat:Metal } .
+        FILTER (?fish = fish:Trout)
+    }
+    UNION
+    {
+        FILTER EXISTS { ?matType rdfs:subClassOf mat:Wood } .
+        FILTER (?fish = fish:Pike)
+    }
+}
